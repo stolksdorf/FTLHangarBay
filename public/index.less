@@ -1,3 +1,67 @@
+
+@color-gray : #aaa;
+
+@font-face{
+	font-family : Bitmap;
+	src         : url('/font/Bitmap-Regular.ttf');
+}
+
 body{
+	font-family : Bitmap;
+	font-weight : 800;
 	background-color: blue;
+}
+
+.cut(@size, @color){
+	position: relative;
+	background-color: @color;
+
+	&:before,&:after {
+		content      : "";
+
+		position     : absolute;
+		display      : block;
+		left         : 0;
+		box-sizing   : border-box;
+
+		width        : 100%;
+
+		border-color : transparent;
+		border-style : solid;
+		border-width : @size;
+	}
+	&:before {
+		top                 : -@size;
+		border-top-width    : 0;
+		border-bottom-color : @color;
+	}
+	&:after {
+		bottom              : -@size;
+		border-top-color    : @color;
+		border-bottom-width : 0;
+	}
+}
+
+.module {
+	.cut(15px, white);
+
+	position   : relative;
+	display    : inline-block;
+
+	background : white;
+
+	z-index: 5;
+}
+
+.border{
+
+
+	z-index: 2;
+
+	display    : inline-block;
+
+	background : @color-gray;
+	.cut(15px, @color-gray);
+
+	padding : 3px;
 }

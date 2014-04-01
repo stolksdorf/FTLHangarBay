@@ -5,7 +5,7 @@ module.exports = function(grunt) {
 		less: {
 			all: {
 				src: './public/index.less',
-				dest: './public/static/style.css'
+				dest: './public/distrib.css'
 			}
 		},
 		watch: {
