@@ -6,7 +6,8 @@
   "dependencies": {
     "ejs": "~1.0.0",
     "express": "~3.5.1",
-    "underscore": "~1.6.0"
+    "underscore": "~1.6.0",
+    "grunt": "~0.4.4"
   },
   "devDependencies": {
     "grunt": "~0.4.4",

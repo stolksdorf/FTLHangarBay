@@ -1,22 +1,236 @@
+/*
+.outline(@dist){
+	.outline(@dist, "0px 0px black");
+}
+.outline(@dist, @shadow) when (@dist > 0) and (isstring(@shadow)) {
+	@shadow-loop: "@{shadow}, @{dist}px @{dist}px #000, -@{dist}px @{dist}px #000, @{dist}px -@{dist}px #000, -@{dist}px -@{dist}px #000, 0px @{dist}px #000, 0px -@{dist}px #000, @{dist}px 0px #000, -@{dist}px 0px #000";
+	.outline(@dist - 1, @shadow-loop);
+}
+.outline(@dist, @shadow) when (@dist = 0){
+	text-shadow: ~"@{shadow}";
+}
+*/
+.menu {
+  position: relative;
+  background-color: #ecf4e7;
+  z-index: 100;
+  padding: 6px;
+  display: inline-block;
+}
+.menu:before,
+.menu:after {
+  content: "";
+  z-index: 50;
+  position: absolute;
+  display: block;
+  left: 0;
+  box-sizing: border-box;
+  width: 100%;
+  border-color: transparent;
+  border-style: solid;
+  border-width: 16px;
+}
+.menu:before {
+  top: -16px;
+  border-top-width: 0;
+  border-bottom-color: #ecf4e7;
+}
+.menu:after {
+  bottom: -16px;
+  border-top-color: #ecf4e7;
+  border-bottom-width: 0;
+}
+.menu .title {
+  font-family: Bitmap;
+  position: absolute;
+  top: -10px;
+  z-index: 200;
+  background-color: #ecf4e7;
+  left: 6px;
+  border-top-left-radius: 9px;
+  text-transform: uppercase;
+  font-size: 0.8em;
+  padding-left: 25px;
+  text-shadow: 3px 0px black, 0px 3px black, 3px 3px black, -3px 3px black, 3px -3px black, -3px -3px black, 3px 3px black, 3px -3px black, -3px 3px black, -3px -3px black, 2px 3px black, -2px 3px black, 2px -3px black, -2px -3px black, 3px 2px black, 3px -2px black, -3px 2px black, -3px -2px black, 1px 3px black, -1px 3px black, 1px -3px black, -1px -3px black, 3px 1px black, 3px -1px black, -3px 1px black, -3px -1px black;
+  color: #ecf4e7;
+}
+.menu .title:after {
+  content: "";
+  z-index: 50;
+  position: absolute;
+  display: block;
+  left: 100%;
+  top: 0;
+  box-sizing: border-box;
+  width: 100%;
+  border-color: transparent;
+  border-style: solid;
+  border-width: 39px;
+  border-bottom-width: 0;
+  border-top-color: #ecf4e7;
+  border-left-width: 0;
+}
+.menu .content {
+  position: relative;
+  background-color: #292421;
+  z-index: 100;
+  padding-top: 39px;
+  padding-left: 6px;
+  padding-right: 6px;
+}
+.menu .content:before,
+.menu .content:after {
+  content: "";
+  z-index: 50;
+  position: absolute;
+  display: block;
+  left: 0;
+  box-sizing: border-box;
+  width: 100%;
+  border-color: transparent;
+  border-style: solid;
+  border-width: 16px;
+}
+.menu .content:before {
+  top: -16px;
+  border-top-width: 0;
+  border-bottom-color: #292421;
+}
+.menu .content:after {
+  bottom: -16px;
+  border-top-color: #292421;
+  border-bottom-width: 0;
+}
 @font-face {
   font-family: Bitmap;
   src: url('/font/Bitmap-Regular.ttf');
 }
+@font-face {
+  font-family: ccnew;
+  src: url('/font/c&cnew.ttf');
+}
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  vertical-align: baseline;
+  margin: 0;
+  padding: 0;
+  font: inherit;
+  font-size: 100%;
+  border: 0;
+}
 body {
-  font-family: Bitmap;
-  font-weight: 800;
-  background-color: blue;
+  background-color: black;
+  font-family: ccnew;
+  font-size: 2em;
 }
-.module {
-  background-color: #ffffff;
+body .container {
   position: relative;
-  display: inline-block;
-  background: white;
-  z-index: 5;
+  height: 800px;
+  max-width: 1200px;
+  margin-right: auto;
+  margin-left: auto;
+  background-image: url('/img/bg.png');
 }
-.module:before,
-.module:after {
+.shipSelector {
+  position: absolute;
+  top: 300px;
+  left: 100px;
+  width: 234px;
+}
+.shipSelector .shipSelect__container .shipChoice {
+  position: relative;
+  background-color: #7c6464;
+  z-index: 100;
+  display: inline-block;
+  vertical-align: top;
+  height: 60px;
+  width: 100px;
+  margin-top: 30px;
+  cursor: pointer;
+}
+.shipSelector .shipSelect__container .shipChoice:before,
+.shipSelector .shipSelect__container .shipChoice:after {
   content: "";
+  z-index: 50;
   position: absolute;
   display: block;
   left: 0;
@@ -24,29 +238,227 @@ body {
   width: 100%;
   border-color: transparent;
   border-style: solid;
-  border-width: 15px;
+  border-width: 10px;
 }
-.module:before {
-  top: -15px;
+.shipSelector .shipSelect__container .shipChoice:before {
+  top: -10px;
   border-top-width: 0;
-  border-bottom-color: #ffffff;
+  border-bottom-color: #7c6464;
 }
-.module:after {
-  bottom: -15px;
-  border-top-color: #ffffff;
+.shipSelector .shipSelect__container .shipChoice:after {
+  bottom: -10px;
+  border-top-color: #7c6464;
   border-bottom-width: 0;
 }
-.border {
-  z-index: 2;
-  display: inline-block;
-  background: #aaaaaa;
+.shipSelector .shipSelect__container .shipChoice:first-child,
+.shipSelector .shipSelect__container .shipChoice:nth-child(2) {
+  margin-top: 0px;
+}
+.shipSelector .shipSelect__container .shipChoice img {
+  width: 100%;
+}
+.shipSelector .shipSelect__container .shipChoice:hover,
+.shipSelector .shipSelect__container .shipChoice .selected {
   position: relative;
-  background-color: #aaaaaa;
+  background-color: #f6eea3;
+  z-index: 100;
+}
+.shipSelector .shipSelect__container .shipChoice:hover:before,
+.shipSelector .shipSelect__container .shipChoice .selected:before,
+.shipSelector .shipSelect__container .shipChoice:hover:after,
+.shipSelector .shipSelect__container .shipChoice .selected:after {
+  content: "";
+  z-index: 50;
+  position: absolute;
+  display: block;
+  left: 0;
+  box-sizing: border-box;
+  width: 100%;
+  border-color: transparent;
+  border-style: solid;
+  border-width: 10px;
+}
+.shipSelector .shipSelect__container .shipChoice:hover:before,
+.shipSelector .shipSelect__container .shipChoice .selected:before {
+  top: -10px;
+  border-top-width: 0;
+  border-bottom-color: #f6eea3;
+}
+.shipSelector .shipSelect__container .shipChoice:hover:after,
+.shipSelector .shipSelect__container .shipChoice .selected:after {
+  bottom: -10px;
+  border-top-color: #f6eea3;
+  border-bottom-width: 0;
+}
+.shipSelector .shipTypeOption {
+  position: relative;
+  background-color: #ecf4e7;
+  z-index: 100;
+  text-shadow: 3px 0px black, 0px 3px black, 3px 3px black, -3px 3px black, 3px -3px black, -3px -3px black, 3px 3px black, 3px -3px black, -3px 3px black, -3px -3px black, 2px 3px black, -2px 3px black, 2px -3px black, -2px -3px black, 3px 2px black, 3px -2px black, -3px 2px black, -3px -2px black, 1px 3px black, -1px 3px black, 1px -3px black, -1px -3px black, 3px 1px black, 3px -1px black, -3px 1px black, -3px -1px black;
+  color: #ecf4e7;
+  display: inline-block;
+  vertical-align: top;
+  height: 20px;
+  width: 20px;
+  margin-top: 16px;
+  padding: 20px 10px;
+  cursor: pointer;
+  font-size: 1.2em;
+  line-height: 1em;
+  text-align: center;
+}
+.shipSelector .shipTypeOption:before,
+.shipSelector .shipTypeOption:after {
+  content: "";
+  z-index: 50;
+  position: absolute;
+  display: block;
+  left: 0;
+  box-sizing: border-box;
+  width: 100%;
+  border-color: transparent;
+  border-style: solid;
+  border-width: 10px;
+}
+.shipSelector .shipTypeOption:before {
+  top: -10px;
+  border-top-width: 0;
+  border-bottom-color: #ecf4e7;
+}
+.shipSelector .shipTypeOption:after {
+  bottom: -10px;
+  border-top-color: #ecf4e7;
+  border-bottom-width: 0;
+}
+.shipSelector .shipTypeOption:hover,
+.shipSelector .shipTypeOption .selected {
+  position: relative;
+  background-color: #f6eea3;
+  z-index: 100;
+  color: #f6eea3;
+}
+.shipSelector .shipTypeOption:hover:before,
+.shipSelector .shipTypeOption .selected:before,
+.shipSelector .shipTypeOption:hover:after,
+.shipSelector .shipTypeOption .selected:after {
+  content: "";
+  z-index: 50;
+  position: absolute;
+  display: block;
+  left: 0;
+  box-sizing: border-box;
+  width: 100%;
+  border-color: transparent;
+  border-style: solid;
+  border-width: 10px;
+}
+.shipSelector .shipTypeOption:hover:before,
+.shipSelector .shipTypeOption .selected:before {
+  top: -10px;
+  border-top-width: 0;
+  border-bottom-color: #f6eea3;
+}
+.shipSelector .shipTypeOption:hover:after,
+.shipSelector .shipTypeOption .selected:after {
+  bottom: -10px;
+  border-top-color: #f6eea3;
+  border-bottom-width: 0;
+}
+.addCrew {
+  position: absolute;
+  top: 600px;
+  left: 100px;
+}
+.addCrew .addCrewContainer {
+  width: 166px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+.addCrew .addCrewContainer .newCrewCard {
+  margin-top: 18px;
+  position: relative;
+  background-color: #7c6464;
+  z-index: 100;
+  cursor: pointer;
+  display: inline-block;
+  vertical-align: top;
+  height: 25px;
+}
+.addCrew .addCrewContainer .newCrewCard:before,
+.addCrew .addCrewContainer .newCrewCard:after {
+  content: "";
+  z-index: 50;
+  position: absolute;
+  display: block;
+  left: 0;
+  box-sizing: border-box;
+  width: 100%;
+  border-color: transparent;
+  border-style: solid;
+  border-width: 5px;
+}
+.addCrew .addCrewContainer .newCrewCard:before {
+  top: -5px;
+  border-top-width: 0;
+  border-bottom-color: #7c6464;
+}
+.addCrew .addCrewContainer .newCrewCard:after {
+  bottom: -5px;
+  border-top-color: #7c6464;
+  border-bottom-width: 0;
+}
+.addCrew .addCrewContainer .newCrewCard img {
+  height: 100%;
+}
+.addCrew .addCrewContainer .newCrewCard:hover {
+  position: relative;
+  background-color: #f6eea3;
+  z-index: 100;
+}
+.addCrew .addCrewContainer .newCrewCard:hover:before,
+.addCrew .addCrewContainer .newCrewCard:hover:after {
+  content: "";
+  z-index: 50;
+  position: absolute;
+  display: block;
+  left: 0;
+  box-sizing: border-box;
+  width: 100%;
+  border-color: transparent;
+  border-style: solid;
+  border-width: 5px;
+}
+.addCrew .addCrewContainer .newCrewCard:hover:before {
+  top: -5px;
+  border-top-width: 0;
+  border-bottom-color: #f6eea3;
+}
+.addCrew .addCrewContainer .newCrewCard:hover:after {
+  bottom: -5px;
+  border-top-color: #f6eea3;
+  border-bottom-width: 0;
+}
+.shipCrew {
+  position: absolute;
+  top: 300px;
+  left: 500px;
+}
+.shipCrew .crewContainer {
+  min-height: 200px;
+}
+.shipCrew .crewContainer .crewCard {
+  position: relative;
+  background-color: #ecf4e7;
+  z-index: 100;
   padding: 3px;
+  display: inline-block;
+  margin-top: 20px;
+  height: 25px;
 }
-.border:before,
-.border:after {
+.shipCrew .crewContainer .crewCard:before,
+.shipCrew .crewContainer .crewCard:after {
   content: "";
+  z-index: 50;
   position: absolute;
   display: block;
   left: 0;
@@ -54,15 +466,345 @@ body {
   width: 100%;
   border-color: transparent;
   border-style: solid;
-  border-width: 15px;
+  border-width: 5px;
 }
-.border:before {
-  top: -15px;
+.shipCrew .crewContainer .crewCard:before {
+  top: -5px;
   border-top-width: 0;
-  border-bottom-color: #aaaaaa;
+  border-bottom-color: #ecf4e7;
 }
-.border:after {
-  bottom: -15px;
-  border-top-color: #aaaaaa;
+.shipCrew .crewContainer .crewCard:after {
+  bottom: -5px;
+  border-top-color: #ecf4e7;
   border-bottom-width: 0;
 }
+.shipCrew .crewContainer .crewCard > *:not(:last-child) {
+  margin-right: -7px;
+}
+.shipCrew .crewContainer .crewCard .crew__image {
+  position: relative;
+  background-color: #7c6464;
+  z-index: 100;
+  cursor: pointer;
+  display: inline-block;
+  vertical-align: top;
+  height: 25px;
+}
+.shipCrew .crewContainer .crewCard .crew__image:before,
+.shipCrew .crewContainer .crewCard .crew__image:after {
+  content: "";
+  z-index: 50;
+  position: absolute;
+  display: block;
+  left: 0;
+  box-sizing: border-box;
+  width: 100%;
+  border-color: transparent;
+  border-style: solid;
+  border-width: 5px;
+}
+.shipCrew .crewContainer .crewCard .crew__image:before {
+  top: -5px;
+  border-top-width: 0;
+  border-bottom-color: #7c6464;
+}
+.shipCrew .crewContainer .crewCard .crew__image:after {
+  bottom: -5px;
+  border-top-color: #7c6464;
+  border-bottom-width: 0;
+}
+.shipCrew .crewContainer .crewCard .crew__image img {
+  height: 100%;
+}
+.shipCrew .crewContainer .crewCard .crew__name {
+  position: relative;
+  background-color: #292421;
+  z-index: 100;
+  color: white;
+  display: inline-block;
+  vertical-align: top;
+  font-size: 0.8em;
+  width: 182px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+.shipCrew .crewContainer .crewCard .crew__name:before,
+.shipCrew .crewContainer .crewCard .crew__name:after {
+  content: "";
+  z-index: 50;
+  position: absolute;
+  display: block;
+  left: 0;
+  box-sizing: border-box;
+  width: 100%;
+  border-color: transparent;
+  border-style: solid;
+  border-width: 5px;
+}
+.shipCrew .crewContainer .crewCard .crew__name:before {
+  top: -5px;
+  border-top-width: 0;
+  border-bottom-color: #292421;
+}
+.shipCrew .crewContainer .crewCard .crew__name:after {
+  bottom: -5px;
+  border-top-color: #292421;
+  border-bottom-width: 0;
+}
+.shipCrew .crewContainer .crewCard .crew__remove,
+.shipCrew .crewContainer .crewCard .crew__newName {
+  text-align: center;
+  position: relative;
+  background-color: #000000;
+  z-index: 100;
+  padding: 1px;
+  display: inline-block;
+  vertical-align: top;
+  width: 30px;
+}
+.shipCrew .crewContainer .crewCard .crew__remove:before,
+.shipCrew .crewContainer .crewCard .crew__newName:before,
+.shipCrew .crewContainer .crewCard .crew__remove:after,
+.shipCrew .crewContainer .crewCard .crew__newName:after {
+  content: "";
+  z-index: 50;
+  position: absolute;
+  display: block;
+  left: 0;
+  box-sizing: border-box;
+  width: 100%;
+  border-color: transparent;
+  border-style: solid;
+  border-width: 5px;
+}
+.shipCrew .crewContainer .crewCard .crew__remove:before,
+.shipCrew .crewContainer .crewCard .crew__newName:before {
+  top: -5px;
+  border-top-width: 0;
+  border-bottom-color: #000000;
+}
+.shipCrew .crewContainer .crewCard .crew__remove:after,
+.shipCrew .crewContainer .crewCard .crew__newName:after {
+  bottom: -5px;
+  border-top-color: #000000;
+  border-bottom-width: 0;
+}
+.shipCrew .crewContainer .crewCard .crew__remove > *,
+.shipCrew .crewContainer .crewCard .crew__newName > * {
+  position: relative;
+  background-color: #ecf4e7;
+  z-index: 100;
+  font-size: 0.6em;
+  cursor: pointer;
+}
+.shipCrew .crewContainer .crewCard .crew__remove > *:before,
+.shipCrew .crewContainer .crewCard .crew__newName > *:before,
+.shipCrew .crewContainer .crewCard .crew__remove > *:after,
+.shipCrew .crewContainer .crewCard .crew__newName > *:after {
+  content: "";
+  z-index: 50;
+  position: absolute;
+  display: block;
+  left: 0;
+  box-sizing: border-box;
+  width: 100%;
+  border-color: transparent;
+  border-style: solid;
+  border-width: 5px;
+}
+.shipCrew .crewContainer .crewCard .crew__remove > *:before,
+.shipCrew .crewContainer .crewCard .crew__newName > *:before {
+  top: -5px;
+  border-top-width: 0;
+  border-bottom-color: #ecf4e7;
+}
+.shipCrew .crewContainer .crewCard .crew__remove > *:after,
+.shipCrew .crewContainer .crewCard .crew__newName > *:after {
+  bottom: -5px;
+  border-top-color: #ecf4e7;
+  border-bottom-width: 0;
+}
+.shipCrew .crewContainer .crewCard .crew__remove > *:hover,
+.shipCrew .crewContainer .crewCard .crew__newName > *:hover {
+  position: relative;
+  background-color: #f6eea3;
+  z-index: 100;
+}
+.shipCrew .crewContainer .crewCard .crew__remove > *:hover:before,
+.shipCrew .crewContainer .crewCard .crew__newName > *:hover:before,
+.shipCrew .crewContainer .crewCard .crew__remove > *:hover:after,
+.shipCrew .crewContainer .crewCard .crew__newName > *:hover:after {
+  content: "";
+  z-index: 50;
+  position: absolute;
+  display: block;
+  left: 0;
+  box-sizing: border-box;
+  width: 100%;
+  border-color: transparent;
+  border-style: solid;
+  border-width: 5px;
+}
+.shipCrew .crewContainer .crewCard .crew__remove > *:hover:before,
+.shipCrew .crewContainer .crewCard .crew__newName > *:hover:before {
+  top: -5px;
+  border-top-width: 0;
+  border-bottom-color: #f6eea3;
+}
+.shipCrew .crewContainer .crewCard .crew__remove > *:hover:after,
+.shipCrew .crewContainer .crewCard .crew__newName > *:hover:after {
+  bottom: -5px;
+  border-top-color: #f6eea3;
+  border-bottom-width: 0;
+}
+.ship__image {
+  position: absolute;
+  left: 50%;
+  margin-left: -220px;
+  -webkit-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  transform: translateX(-50%);
+}
+.ship__nameContainer {
+  position: relative;
+  background-color: #ecf4e7;
+  z-index: 100;
+  display: inline-block;
+  margin: 30px;
+}
+.ship__nameContainer:before,
+.ship__nameContainer:after {
+  content: "";
+  z-index: 50;
+  position: absolute;
+  display: block;
+  left: 0;
+  box-sizing: border-box;
+  width: 100%;
+  border-color: transparent;
+  border-style: solid;
+  border-width: 16px;
+}
+.ship__nameContainer:before {
+  top: -16px;
+  border-top-width: 0;
+  border-bottom-color: #ecf4e7;
+}
+.ship__nameContainer:after {
+  bottom: -16px;
+  border-top-color: #ecf4e7;
+  border-bottom-width: 0;
+}
+.ship__nameContainer .ship__renameButton {
+  position: relative;
+  background-color: #ecf4e7;
+  z-index: 100;
+  text-shadow: 3px 0px black, 0px 3px black, 3px 3px black, -3px 3px black, 3px -3px black, -3px -3px black, 3px 3px black, 3px -3px black, -3px 3px black, -3px -3px black, 2px 3px black, -2px 3px black, 2px -3px black, -2px -3px black, 3px 2px black, 3px -2px black, -3px 2px black, -3px -2px black, 1px 3px black, -1px 3px black, 1px -3px black, -1px -3px black, 3px 1px black, 3px -1px black, -3px 1px black, -3px -1px black;
+  display: inline-block;
+  vertical-align: middle;
+  font-size: 1.2em;
+  color: #ecf4e7;
+  text-transform: uppercase;
+}
+.ship__nameContainer .ship__renameButton:before,
+.ship__nameContainer .ship__renameButton:after {
+  content: "";
+  z-index: 50;
+  position: absolute;
+  display: block;
+  left: 0;
+  box-sizing: border-box;
+  width: 100%;
+  border-color: transparent;
+  border-style: solid;
+  border-width: 12px;
+}
+.ship__nameContainer .ship__renameButton:before {
+  top: -12px;
+  border-top-width: 0;
+  border-bottom-color: #ecf4e7;
+}
+.ship__nameContainer .ship__renameButton:after {
+  bottom: -12px;
+  border-top-color: #ecf4e7;
+  border-bottom-width: 0;
+}
+.ship__nameContainer .ship__name {
+  position: relative;
+  background-color: #000000;
+  z-index: 100;
+  display: inline-block;
+  vertical-align: middle;
+  padding-left: 15px;
+  font-size: 2em;
+  color: #ecf4e7;
+}
+.ship__nameContainer .ship__name:before,
+.ship__nameContainer .ship__name:after {
+  content: "";
+  z-index: 50;
+  position: absolute;
+  display: block;
+  left: 0;
+  box-sizing: border-box;
+  width: 100%;
+  border-color: transparent;
+  border-style: solid;
+  border-width: 16px;
+}
+.ship__nameContainer .ship__name:before {
+  top: -16px;
+  border-top-width: 0;
+  border-bottom-color: #000000;
+}
+.ship__nameContainer .ship__name:after {
+  bottom: -16px;
+  border-top-color: #000000;
+  border-bottom-width: 0;
+}
+/*
+.crewCard2{
+	@cut : 5px;
+
+	.whiteBorder(@cut, 3px);
+	width : 130px;
+	text-align: center;
+	margin-top: 20px;
+	&:first-child, &:nth-child(2){
+		margin-top : 0px;
+	}
+
+	.crew__image{
+		.bsgBorder(@gray, @cut);
+		margin-bottom: @cut * 2;
+		cursor: pointer;
+		img{
+			height : 40px;
+		}
+	}
+	.crew__name{
+		margin-top: @cut *2 + 3;
+		.bsgBorder(@dark, @cut);
+		color: white;
+		font-size: 0.8em;
+		margin-bottom: @cut;
+	}
+	.crew__remove, .crew__newName{
+		margin-top: @cut *2;
+		.bsgBorder(black, @cut);
+		padding : 1px;
+		display: inline-block;
+		width : 44%;
+
+		&>*{
+			.bsgBorder(@white, @cut);
+			font-size: 0.6em;
+			cursor: pointer;
+			&:hover{
+				.bsgBorder(@yellow, @cut);
+			}
+		}
+	}
+
+}
+*/

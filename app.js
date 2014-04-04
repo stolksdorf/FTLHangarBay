@@ -2,7 +2,7 @@
 GLOBAL.fs      = require('fs');
 GLOBAL._       = require('underscore');
 GLOBAL.express = express = require("express");
-GLOBAL.app     = express();
+GLOBAL.app     module.exports = express();
 GLOBAL.ejs     = require('ejs');
 
 

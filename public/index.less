@@ -1,67 +1,296 @@
 
-@color-gray : #aaa;
+@import "mixins.less";
+
+@white : #ecf4e7;
+@gray : #7c6464;
+@yellow     : #f6eea3;
+@dark : #292421;
 
 @font-face{
 	font-family : Bitmap;
 	src         : url('/font/Bitmap-Regular.ttf');
 }
 
+@font-face{
+	font-family : ccnew;
+	src         : url('/font/c&cnew.ttf');
+}
+
+html, body, div, span, applet, object, iframe,h1, h2, h3, h4, h5, h6, p, blockquote, pre,a, abbr, acronym, address, big, cite, code,del, dfn, em, img, ins, kbd, q, s, samp,small, strike, strong, sub, sup, tt, var,b, u, i, center,dl, dt, dd, ol, ul, li,fieldset, form, label, legend,table, caption, tbody, tfoot, thead, tr, th, td,article, aside, canvas, details, embed,figure, figcaption, footer, header, hgroup,menu, nav, output, ruby, section, summary,time, mark, audio, video {
+	vertical-align : baseline;
+
+	margin         : 0;
+	padding        : 0;
+
+	font           : inherit;
+	font-size      : 100%;
+	border         : 0;
+}
+
 body{
-	font-family : Bitmap;
-	font-weight : 800;
-	background-color: blue;
-}
+	background-color : black; //make into stars
+	font-family      : ccnew;
+	font-size        : 2em;
 
-.cut(@size, @color){
-	position: relative;
-	background-color: @color;
+	.container{
+		position         : relative;
 
-	&:before,&:after {
-		content      : "";
+		height           : 800px;
+		max-width        : 1200px;
+		margin-right     : auto;
+		margin-left      : auto;
 
-		position     : absolute;
-		display      : block;
-		left         : 0;
-		box-sizing   : border-box;
-
-		width        : 100%;
-
-		border-color : transparent;
-		border-style : solid;
-		border-width : @size;
-	}
-	&:before {
-		top                 : -@size;
-		border-top-width    : 0;
-		border-bottom-color : @color;
-	}
-	&:after {
-		bottom              : -@size;
-		border-top-color    : @color;
-		border-bottom-width : 0;
+		background-image : url('/img/bg.png');
 	}
 }
 
-.module {
-	.cut(15px, white);
 
-	position   : relative;
-	display    : inline-block;
+.shipSelector{
+	position : absolute;
+	top      : 300px;
+	left     : 100px;
 
-	background : white;
+	width    : 234px;
 
-	z-index: 5;
+	.shipSelect__container{
+
+		.shipChoice{
+			.bsgBorder(@gray, 10px);
+
+			display        : inline-block;
+			vertical-align : top;
+
+			height         : 60px;
+			width          : 100px;
+			margin-top     : 30px;
+
+			cursor         : pointer;
+
+			&:first-child, &:nth-child(2){
+				margin-top : 0px;
+			}
+
+			img{
+				width : 100%;
+			}
+
+			&:hover, .selected{
+				.bsgBorder(@yellow, 10px);
+			}
+		}
+	}
+	.shipTypeOption{
+		.bsgBorder(@white, 10px);
+		.outline(3);
+
+		display        : inline-block;
+		vertical-align : top;
+
+		height         : 20px;
+		width          : 20px;
+		margin-top     : 16px;
+		padding        : 20px 10px;
+
+		cursor         : pointer;
+		font-size      : 1.2em;
+		line-height    : 1em;
+		text-align     : center;
+
+		&:hover, .selected{
+			.bsgBorder(@yellow, 10px);
+			color : @yellow;
+		}
+	}
 }
 
-.border{
 
 
-	z-index: 2;
 
-	display    : inline-block;
+.addCrew{
+	position : absolute;
+	top      : 600px;
+	left     : 100px;
 
-	background : @color-gray;
-	.cut(15px, @color-gray);
+	.addCrewContainer{
 
-	padding : 3px;
+		width: 166px;
+		padding-left: 10px;
+		padding-right: 10px;
+
+		.newCrewCard{
+			margin-top : 18px;
+			.bsgBorder(@gray, 5px);
+			cursor: pointer;
+			display: inline-block;
+			vertical-align: top;
+			height : 25px;
+			img{
+				height : 100%;
+			}
+			&:hover{
+				.bsgBorder(@yellow, 5px);
+			}
+		}
+
+
+	}
+
+
 }
+
+
+
+
+
+.shipCrew{
+	position : absolute;
+	top      : 300px;
+	left     : 500px;
+
+	.crewContainer{
+		min-height : 200px;
+
+		.crewCard{
+			@cut : 5px;
+			.whiteBorder(@cut, 3px);
+			margin-top: 20px;
+			height : 25px;
+
+			&>*:not(:last-child){
+				margin-right: -7px;
+			}
+
+			.crew__image{
+				.bsgBorder(@gray, @cut);
+				//margin-bottom: @cut * 2;
+				cursor: pointer;
+				display: inline-block;
+				vertical-align: top;
+				height : 25px;
+				img{
+					height : 100%;
+				}
+			}
+			.crew__name{
+				.bsgBorder(@dark, @cut);
+				color: white;
+				display: inline-block;
+				vertical-align: top;
+				font-size: 0.8em;
+				width : 182px;
+				padding-left: 5px;
+				padding-right: 5px;
+			}
+			.crew__remove, .crew__newName{
+				text-align: center;
+				.bsgBorder(black, @cut);
+				padding : 1px;
+				display: inline-block;
+				vertical-align: top;
+				width : 30px;
+				&>*{
+					.bsgBorder(@white, @cut);
+					font-size: 0.6em;
+					cursor: pointer;
+					&:hover{
+						.bsgBorder(@yellow, @cut);
+					}
+				}
+			}
+
+		}
+
+
+	}
+}
+
+.ship__image{
+	position          : absolute;
+	left              : 50%;
+
+	margin-left       : -220px;
+
+	-webkit-transform : translateX(-50%);
+	-ms-transform     : translateX(-50%);
+	transform         : translateX(-50%);
+}
+
+.ship__nameContainer{
+	.bsgBorder(@white);
+
+	display : inline-block;
+
+	margin  : 30px;
+
+	.ship__renameButton{
+		.bsgBorder(@white, 12px);
+		.outline(3);
+
+		display        : inline-block;
+		vertical-align : middle;
+
+		//color: @white;
+		font-size      : 1.2em;
+		color          : @white;
+		text-transform : uppercase;
+	}
+	.ship__name{
+		.bsgBorder(black);
+
+		display        : inline-block;
+		vertical-align : middle;
+
+		padding-left   : 15px;
+
+		font-size      : 2em;
+		color          : @white;
+	}
+}
+
+/*
+.crewCard2{
+	@cut : 5px;
+
+	.whiteBorder(@cut, 3px);
+	width : 130px;
+	text-align: center;
+	margin-top: 20px;
+	&:first-child, &:nth-child(2){
+		margin-top : 0px;
+	}
+
+	.crew__image{
+		.bsgBorder(@gray, @cut);
+		margin-bottom: @cut * 2;
+		cursor: pointer;
+		img{
+			height : 40px;
+		}
+	}
+	.crew__name{
+		margin-top: @cut *2 + 3;
+		.bsgBorder(@dark, @cut);
+		color: white;
+		font-size: 0.8em;
+		margin-bottom: @cut;
+	}
+	.crew__remove, .crew__newName{
+		margin-top: @cut *2;
+		.bsgBorder(black, @cut);
+		padding : 1px;
+		display: inline-block;
+		width : 44%;
+
+		&>*{
+			.bsgBorder(@white, @cut);
+			font-size: 0.6em;
+			cursor: pointer;
+			&:hover{
+				.bsgBorder(@yellow, @cut);
+			}
+		}
+	}
+
+}
+*/
+
