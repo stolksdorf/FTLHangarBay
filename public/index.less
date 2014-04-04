@@ -1,10 +1,10 @@
 
 @import "mixins.less";
 
-@white : #ecf4e7;
-@gray : #7c6464;
-@yellow     : #f6eea3;
-@dark : #292421;
+@white  : #ecf4e7;
+@gray   : #7c6464;
+@yellow : #f6eea3;
+@dark   : #292421;
 
 @font-face{
 	font-family : Bitmap;
@@ -15,6 +15,20 @@
 	font-family : ccnew;
 	src         : url('/font/c&cnew.ttf');
 }
+@font-face{
+	font-family : jType;
+	src         : url('/font/JustinFont12.ttf');
+}
+
+
+
+
+
+
+
+
+
+
 
 html, body, div, span, applet, object, iframe,h1, h2, h3, h4, h5, h6, p, blockquote, pre,a, abbr, acronym, address, big, cite, code,del, dfn, em, img, ins, kbd, q, s, samp,small, strike, strong, sub, sup, tt, var,b, u, i, center,dl, dt, dd, ol, ul, li,fieldset, form, label, legend,table, caption, tbody, tfoot, thead, tr, th, td,article, aside, canvas, details, embed,figure, figcaption, footer, header, hgroup,menu, nav, output, ruby, section, summary,time, mark, audio, video {
 	vertical-align : baseline;
@@ -32,6 +46,8 @@ body{
 	font-family      : ccnew;
 	font-size        : 2em;
 
+	min-height: 100%;
+
 	.container{
 		position         : relative;
 
@@ -40,20 +56,18 @@ body{
 		margin-right     : auto;
 		margin-left      : auto;
 
-		background-image : url('/img/bg.png');
+		background-image : url('/img/FTL bg dark2.png');
 	}
 }
 
-
 .shipSelector{
 	position : absolute;
-	top      : 300px;
-	left     : 100px;
+	top      : 170px;
+	left     : 30px;
 
-	width    : 234px;
+	width    : 236px;
 
 	.shipSelect__container{
-
 		.shipChoice{
 			.bsgBorder(@gray, 10px);
 
@@ -65,10 +79,6 @@ body{
 			margin-top     : 30px;
 
 			cursor         : pointer;
-
-			&:first-child, &:nth-child(2){
-				margin-top : 0px;
-			}
 
 			img{
 				width : 100%;
@@ -85,16 +95,21 @@ body{
 
 		display        : inline-block;
 		vertical-align : top;
+		text-align: center;
 
-		height         : 20px;
-		width          : 20px;
-		margin-top     : 16px;
-		padding        : 20px 10px;
+		height         : 23px;
+		margin-top     : 30px;
+		margin-left : 11px;
+		margin-right : 11px;
+		padding        : 0px 13px;
 
 		cursor         : pointer;
 		font-size      : 1.2em;
 		line-height    : 1em;
 		text-align     : center;
+		&>*{
+			margin-top: -8px;
+		}
 
 		&:hover, .selected{
 			.bsgBorder(@yellow, 10px);
@@ -103,27 +118,27 @@ body{
 	}
 }
 
-
-
-
 .addCrew{
 	position : absolute;
 	top      : 600px;
-	left     : 100px;
+	left     : 50px;
 
 	.addCrewContainer{
-
-		width: 166px;
-		padding-left: 10px;
-		padding-right: 10px;
+		width         : 166px;
+		padding-right : 10px;
+		padding-left  : 10px;
 
 		.newCrewCard{
-			margin-top : 18px;
 			.bsgBorder(@gray, 5px);
-			cursor: pointer;
-			display: inline-block;
-			vertical-align: top;
-			height : 25px;
+
+			display        : inline-block;
+			vertical-align : top;
+
+			height         : 25px;
+			margin-top     : 18px;
+
+			cursor         : pointer;
+
 			img{
 				height : 100%;
 			}
@@ -131,76 +146,68 @@ body{
 				.bsgBorder(@yellow, 5px);
 			}
 		}
-
-
 	}
-
-
 }
-
-
-
-
 
 .shipCrew{
 	position : absolute;
-	top      : 300px;
-	left     : 500px;
+	top      : 470px;
+	right     : 30px;
+
+	width : 320px;
+	.content{
+		padding-top: 12px;
+	}
 
 	.crewContainer{
-		min-height : 200px;
+		min-height : 195px;
 
 		.crewCard{
-			@cut : 5px;
+			@cut       : 5px;
+
 			.whiteBorder(@cut, 3px);
-			margin-top: 20px;
-			height : 25px;
+
+			height     : 25px;
+			margin-top : 15px;
 
 			&>*:not(:last-child){
-				margin-right: -7px;
+				margin-right : -7px;
 			}
 
 			.crew__image{
 				.bsgBorder(@gray, @cut);
-				//margin-bottom: @cut * 2;
-				cursor: pointer;
-				display: inline-block;
-				vertical-align: top;
-				height : 25px;
+
+				display        : inline-block;
+				vertical-align : top;
+
+				height         : 25px;
+
+				cursor         : pointer;
+
 				img{
 					height : 100%;
 				}
 			}
+
 			.crew__name{
 				.bsgBorder(@dark, @cut);
-				color: white;
-				display: inline-block;
-				vertical-align: top;
-				font-size: 0.8em;
-				width : 182px;
-				padding-left: 5px;
-				padding-right: 5px;
+				font-family: jType;
+
+				display        : inline-block;
+				vertical-align : top;
+
+				width          : 182px;
+				padding-right  : 5px;
+				padding-left   : 5px;
+
+				font-size      : 0.4em;
+				color          : white;
 			}
+
 			.crew__remove, .crew__newName{
-				text-align: center;
-				.bsgBorder(black, @cut);
-				padding : 1px;
-				display: inline-block;
-				vertical-align: top;
-				width : 30px;
-				&>*{
-					.bsgBorder(@white, @cut);
-					font-size: 0.6em;
-					cursor: pointer;
-					&:hover{
-						.bsgBorder(@yellow, @cut);
-					}
-				}
+				width          : 30px;
 			}
-
 		}
-
-
 	}
 }
 
@@ -208,89 +215,91 @@ body{
 	position          : absolute;
 	left              : 50%;
 
-	margin-left       : -220px;
+	top : 140px;
+
 
 	-webkit-transform : translateX(-50%);
 	-ms-transform     : translateX(-50%);
 	transform         : translateX(-50%);
 }
 
-.ship__nameContainer{
-	.bsgBorder(@white);
+.shipNameContainer{
+	.bsgBorder(@white, 10px);
 
 	display : inline-block;
+	padding: 6px;
 
 	margin  : 30px;
 
-	.ship__renameButton{
-		.bsgBorder(@white, 12px);
-		.outline(3);
+	.shipName{
+		.bsgBorder(black, 10px);
 
 		display        : inline-block;
-		vertical-align : middle;
-
-		//color: @white;
-		font-size      : 1.2em;
-		color          : @white;
-		text-transform : uppercase;
-	}
-	.ship__name{
-		.bsgBorder(black);
-
-		display        : inline-block;
-		vertical-align : middle;
+		vertical-align : top;
 
 		padding-left   : 15px;
+		padding-right   : 15px;
 
-		font-size      : 2em;
+		font-size      : 1.4em;
 		color          : @white;
 	}
-}
 
-/*
-.crewCard2{
-	@cut : 5px;
-
-	.whiteBorder(@cut, 3px);
-	width : 130px;
-	text-align: center;
-	margin-top: 20px;
-	&:first-child, &:nth-child(2){
-		margin-top : 0px;
-	}
-
-	.crew__image{
-		.bsgBorder(@gray, @cut);
-		margin-bottom: @cut * 2;
-		cursor: pointer;
-		img{
-			height : 40px;
-		}
-	}
-	.crew__name{
-		margin-top: @cut *2 + 3;
-		.bsgBorder(@dark, @cut);
-		color: white;
-		font-size: 0.8em;
-		margin-bottom: @cut;
-	}
-	.crew__remove, .crew__newName{
-		margin-top: @cut *2;
-		.bsgBorder(black, @cut);
-		padding : 1px;
+	.shipGenerators{
 		display: inline-block;
-		width : 44%;
-
-		&>*{
-			.bsgBorder(@white, @cut);
-			font-size: 0.6em;
+		vertical-align: top;
+		width : 208px;
+		/*.bsgBorder(@dark);
+		padding-left : 8px;
+		padding-right : 8px;
+		height : 44px;
+*/
+		.shipGeneratorOption{
+			display: inline-block;
+			vertical-align: top;
+			width : 80px;
+			font-family: jType;
+			text-align: center;
+			padding: 3px;
+			font-size: 0.4em;
+			border : 1px solid @dark;
 			cursor: pointer;
-			&:hover{
-				.bsgBorder(@yellow, @cut);
+			margin-left: -7px;
+			margin-top: -3px;
+
+
+			&:hover, &.selected{
+				background-color: @yellow;
 			}
+			/*
+			.bsgBorder(@white, 3px);
+			padding-left: 5px;
+			padding-right: 5px;
+			margin-right: -5px;
+			font-size: 0.6em;
+			margin-bottom: 6px;
+
+			&>*:hover{
+				.bsgBorder(@yellow, 3px);
+			}
+			*/
+		}
+
+	}
+
+	.shipRename{
+		//.bsgBorder(@white, 12px);
+		.outline(2);
+
+		display        : inline-block;
+		vertical-align : top;
+
+		//color: @white;
+		//font-size      : 1.2em;
+		//color          : @white;
+		text-transform : uppercase;
+		&:hover{
+			color : @yellow;
 		}
 	}
 
 }
-*/
-

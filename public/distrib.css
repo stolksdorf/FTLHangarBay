@@ -1,15 +1,93 @@
-/*
-.outline(@dist){
-	.outline(@dist, "0px 0px black");
+.ftlButton {
+  position: relative;
+  background-color: #000000;
+  z-index: 100;
+  display: inline-block;
+  vertical-align: top;
+  padding: 1px;
+  text-align: center;
 }
-.outline(@dist, @shadow) when (@dist > 0) and (isstring(@shadow)) {
-	@shadow-loop: "@{shadow}, @{dist}px @{dist}px #000, -@{dist}px @{dist}px #000, @{dist}px -@{dist}px #000, -@{dist}px -@{dist}px #000, 0px @{dist}px #000, 0px -@{dist}px #000, @{dist}px 0px #000, -@{dist}px 0px #000";
-	.outline(@dist - 1, @shadow-loop);
+.ftlButton:before,
+.ftlButton:after {
+  content: "";
+  z-index: 50;
+  position: absolute;
+  display: block;
+  left: 0;
+  box-sizing: border-box;
+  width: 100%;
+  border-color: transparent;
+  border-style: solid;
+  border-width: 5px;
 }
-.outline(@dist, @shadow) when (@dist = 0){
-	text-shadow: ~"@{shadow}";
+.ftlButton:before {
+  top: -5px;
+  border-top-width: 0;
+  border-bottom-color: #000000;
 }
-*/
+.ftlButton:after {
+  bottom: -5px;
+  border-top-color: #000000;
+  border-bottom-width: 0;
+}
+.ftlButton > * {
+  position: relative;
+  background-color: #ecf4e7;
+  z-index: 100;
+  cursor: pointer;
+  font-size: 0.6em;
+}
+.ftlButton > *:before,
+.ftlButton > *:after {
+  content: "";
+  z-index: 50;
+  position: absolute;
+  display: block;
+  left: 0;
+  box-sizing: border-box;
+  width: 100%;
+  border-color: transparent;
+  border-style: solid;
+  border-width: 5px;
+}
+.ftlButton > *:before {
+  top: -5px;
+  border-top-width: 0;
+  border-bottom-color: #ecf4e7;
+}
+.ftlButton > *:after {
+  bottom: -5px;
+  border-top-color: #ecf4e7;
+  border-bottom-width: 0;
+}
+.ftlButton > *:hover {
+  position: relative;
+  background-color: #f6eea3;
+  z-index: 100;
+}
+.ftlButton > *:hover:before,
+.ftlButton > *:hover:after {
+  content: "";
+  z-index: 50;
+  position: absolute;
+  display: block;
+  left: 0;
+  box-sizing: border-box;
+  width: 100%;
+  border-color: transparent;
+  border-style: solid;
+  border-width: 5px;
+}
+.ftlButton > *:hover:before {
+  top: -5px;
+  border-top-width: 0;
+  border-bottom-color: #f6eea3;
+}
+.ftlButton > *:hover:after {
+  bottom: -5px;
+  border-top-color: #f6eea3;
+  border-bottom-width: 0;
+}
 .menu {
   position: relative;
   background-color: #ecf4e7;
@@ -49,10 +127,15 @@
   left: 6px;
   border-top-left-radius: 9px;
   text-transform: uppercase;
-  font-size: 0.8em;
-  padding-left: 25px;
-  text-shadow: 3px 0px black, 0px 3px black, 3px 3px black, -3px 3px black, 3px -3px black, -3px -3px black, 3px 3px black, 3px -3px black, -3px 3px black, -3px -3px black, 2px 3px black, -2px 3px black, 2px -3px black, -2px -3px black, 3px 2px black, 3px -2px black, -3px 2px black, -3px -2px black, 1px 3px black, -1px 3px black, 1px -3px black, -1px -3px black, 3px 1px black, 3px -1px black, -3px 1px black, -3px -1px black;
+  font-size: 0.7em;
+  padding-left: 20px;
+  padding-right: 10px;
+  padding-bottom: 5px;
+  text-shadow: 2px 0px black, 0px 2px black, 2px 2px black, -2px 2px black, 2px -2px black, -2px -2px black, 2px 2px black, 2px -2px black, -2px 2px black, -2px -2px black, 1px 2px black, -1px 2px black, 1px -2px black, -1px -2px black, 2px 1px black, 2px -1px black, -2px 1px black, -2px -1px black;
   color: #ecf4e7;
+}
+.menu .title > * {
+  margin-top: -8px;
 }
 .menu .title:after {
   content: "";
@@ -62,10 +145,9 @@
   left: 100%;
   top: 0;
   box-sizing: border-box;
-  width: 100%;
   border-color: transparent;
   border-style: solid;
-  border-width: 39px;
+  border-width: 30px;
   border-bottom-width: 0;
   border-top-color: #ecf4e7;
   border-left-width: 0;
@@ -74,7 +156,7 @@
   position: relative;
   background-color: #292421;
   z-index: 100;
-  padding-top: 39px;
+  padding-top: 8px;
   padding-left: 6px;
   padding-right: 6px;
 }
@@ -108,6 +190,10 @@
 @font-face {
   font-family: ccnew;
   src: url('/font/c&cnew.ttf');
+}
+@font-face {
+  font-family: jType;
+  src: url('/font/JustinFont12.ttf');
 }
 html,
 body,
@@ -201,6 +287,7 @@ body {
   background-color: black;
   font-family: ccnew;
   font-size: 2em;
+  min-height: 100%;
 }
 body .container {
   position: relative;
@@ -208,13 +295,13 @@ body .container {
   max-width: 1200px;
   margin-right: auto;
   margin-left: auto;
-  background-image: url('/img/bg.png');
+  background-image: url('/img/FTL bg dark2.png');
 }
 .shipSelector {
   position: absolute;
-  top: 300px;
-  left: 100px;
-  width: 234px;
+  top: 170px;
+  left: 30px;
+  width: 236px;
 }
 .shipSelector .shipSelect__container .shipChoice {
   position: relative;
@@ -249,10 +336,6 @@ body .container {
   bottom: -10px;
   border-top-color: #7c6464;
   border-bottom-width: 0;
-}
-.shipSelector .shipSelect__container .shipChoice:first-child,
-.shipSelector .shipSelect__container .shipChoice:nth-child(2) {
-  margin-top: 0px;
 }
 .shipSelector .shipSelect__container .shipChoice img {
   width: 100%;
@@ -298,10 +381,11 @@ body .container {
   color: #ecf4e7;
   display: inline-block;
   vertical-align: top;
-  height: 20px;
-  width: 20px;
-  margin-top: 16px;
-  padding: 20px 10px;
+  height: 23px;
+  margin-top: 30px;
+  margin-left: 11px;
+  margin-right: 11px;
+  padding: 0px 13px;
   cursor: pointer;
   font-size: 1.2em;
   line-height: 1em;
@@ -329,6 +413,9 @@ body .container {
   bottom: -10px;
   border-top-color: #ecf4e7;
   border-bottom-width: 0;
+}
+.shipSelector .shipTypeOption > * {
+  margin-top: -8px;
 }
 .shipSelector .shipTypeOption:hover,
 .shipSelector .shipTypeOption .selected {
@@ -367,22 +454,22 @@ body .container {
 .addCrew {
   position: absolute;
   top: 600px;
-  left: 100px;
+  left: 50px;
 }
 .addCrew .addCrewContainer {
   width: 166px;
-  padding-left: 10px;
   padding-right: 10px;
+  padding-left: 10px;
 }
 .addCrew .addCrewContainer .newCrewCard {
-  margin-top: 18px;
   position: relative;
   background-color: #7c6464;
   z-index: 100;
-  cursor: pointer;
   display: inline-block;
   vertical-align: top;
   height: 25px;
+  margin-top: 18px;
+  cursor: pointer;
 }
 .addCrew .addCrewContainer .newCrewCard:before,
 .addCrew .addCrewContainer .newCrewCard:after {
@@ -440,11 +527,15 @@ body .container {
 }
 .shipCrew {
   position: absolute;
-  top: 300px;
-  left: 500px;
+  top: 470px;
+  right: 30px;
+  width: 320px;
+}
+.shipCrew .content {
+  padding-top: 12px;
 }
 .shipCrew .crewContainer {
-  min-height: 200px;
+  min-height: 195px;
 }
 .shipCrew .crewContainer .crewCard {
   position: relative;
@@ -452,8 +543,8 @@ body .container {
   z-index: 100;
   padding: 3px;
   display: inline-block;
-  margin-top: 20px;
   height: 25px;
+  margin-top: 15px;
 }
 .shipCrew .crewContainer .crewCard:before,
 .shipCrew .crewContainer .crewCard:after {
@@ -485,10 +576,10 @@ body .container {
   position: relative;
   background-color: #7c6464;
   z-index: 100;
-  cursor: pointer;
   display: inline-block;
   vertical-align: top;
   height: 25px;
+  cursor: pointer;
 }
 .shipCrew .crewContainer .crewCard .crew__image:before,
 .shipCrew .crewContainer .crewCard .crew__image:after {
@@ -520,13 +611,14 @@ body .container {
   position: relative;
   background-color: #292421;
   z-index: 100;
-  color: white;
+  font-family: jType;
   display: inline-block;
   vertical-align: top;
-  font-size: 0.8em;
   width: 182px;
-  padding-left: 5px;
   padding-right: 5px;
+  padding-left: 5px;
+  font-size: 0.4em;
+  color: white;
 }
 .shipCrew .crewContainer .crewCard .crew__name:before,
 .shipCrew .crewContainer .crewCard .crew__name:after {
@@ -553,127 +645,26 @@ body .container {
 }
 .shipCrew .crewContainer .crewCard .crew__remove,
 .shipCrew .crewContainer .crewCard .crew__newName {
-  text-align: center;
-  position: relative;
-  background-color: #000000;
-  z-index: 100;
-  padding: 1px;
-  display: inline-block;
-  vertical-align: top;
   width: 30px;
-}
-.shipCrew .crewContainer .crewCard .crew__remove:before,
-.shipCrew .crewContainer .crewCard .crew__newName:before,
-.shipCrew .crewContainer .crewCard .crew__remove:after,
-.shipCrew .crewContainer .crewCard .crew__newName:after {
-  content: "";
-  z-index: 50;
-  position: absolute;
-  display: block;
-  left: 0;
-  box-sizing: border-box;
-  width: 100%;
-  border-color: transparent;
-  border-style: solid;
-  border-width: 5px;
-}
-.shipCrew .crewContainer .crewCard .crew__remove:before,
-.shipCrew .crewContainer .crewCard .crew__newName:before {
-  top: -5px;
-  border-top-width: 0;
-  border-bottom-color: #000000;
-}
-.shipCrew .crewContainer .crewCard .crew__remove:after,
-.shipCrew .crewContainer .crewCard .crew__newName:after {
-  bottom: -5px;
-  border-top-color: #000000;
-  border-bottom-width: 0;
-}
-.shipCrew .crewContainer .crewCard .crew__remove > *,
-.shipCrew .crewContainer .crewCard .crew__newName > * {
-  position: relative;
-  background-color: #ecf4e7;
-  z-index: 100;
-  font-size: 0.6em;
-  cursor: pointer;
-}
-.shipCrew .crewContainer .crewCard .crew__remove > *:before,
-.shipCrew .crewContainer .crewCard .crew__newName > *:before,
-.shipCrew .crewContainer .crewCard .crew__remove > *:after,
-.shipCrew .crewContainer .crewCard .crew__newName > *:after {
-  content: "";
-  z-index: 50;
-  position: absolute;
-  display: block;
-  left: 0;
-  box-sizing: border-box;
-  width: 100%;
-  border-color: transparent;
-  border-style: solid;
-  border-width: 5px;
-}
-.shipCrew .crewContainer .crewCard .crew__remove > *:before,
-.shipCrew .crewContainer .crewCard .crew__newName > *:before {
-  top: -5px;
-  border-top-width: 0;
-  border-bottom-color: #ecf4e7;
-}
-.shipCrew .crewContainer .crewCard .crew__remove > *:after,
-.shipCrew .crewContainer .crewCard .crew__newName > *:after {
-  bottom: -5px;
-  border-top-color: #ecf4e7;
-  border-bottom-width: 0;
-}
-.shipCrew .crewContainer .crewCard .crew__remove > *:hover,
-.shipCrew .crewContainer .crewCard .crew__newName > *:hover {
-  position: relative;
-  background-color: #f6eea3;
-  z-index: 100;
-}
-.shipCrew .crewContainer .crewCard .crew__remove > *:hover:before,
-.shipCrew .crewContainer .crewCard .crew__newName > *:hover:before,
-.shipCrew .crewContainer .crewCard .crew__remove > *:hover:after,
-.shipCrew .crewContainer .crewCard .crew__newName > *:hover:after {
-  content: "";
-  z-index: 50;
-  position: absolute;
-  display: block;
-  left: 0;
-  box-sizing: border-box;
-  width: 100%;
-  border-color: transparent;
-  border-style: solid;
-  border-width: 5px;
-}
-.shipCrew .crewContainer .crewCard .crew__remove > *:hover:before,
-.shipCrew .crewContainer .crewCard .crew__newName > *:hover:before {
-  top: -5px;
-  border-top-width: 0;
-  border-bottom-color: #f6eea3;
-}
-.shipCrew .crewContainer .crewCard .crew__remove > *:hover:after,
-.shipCrew .crewContainer .crewCard .crew__newName > *:hover:after {
-  bottom: -5px;
-  border-top-color: #f6eea3;
-  border-bottom-width: 0;
 }
 .ship__image {
   position: absolute;
   left: 50%;
-  margin-left: -220px;
+  top: 140px;
   -webkit-transform: translateX(-50%);
   -ms-transform: translateX(-50%);
   transform: translateX(-50%);
 }
-.ship__nameContainer {
+.shipNameContainer {
   position: relative;
   background-color: #ecf4e7;
   z-index: 100;
   display: inline-block;
+  padding: 6px;
   margin: 30px;
 }
-.ship__nameContainer:before,
-.ship__nameContainer:after {
+.shipNameContainer:before,
+.shipNameContainer:after {
   content: "";
   z-index: 50;
   position: absolute;
@@ -683,64 +674,31 @@ body .container {
   width: 100%;
   border-color: transparent;
   border-style: solid;
-  border-width: 16px;
+  border-width: 10px;
 }
-.ship__nameContainer:before {
-  top: -16px;
+.shipNameContainer:before {
+  top: -10px;
   border-top-width: 0;
   border-bottom-color: #ecf4e7;
 }
-.ship__nameContainer:after {
-  bottom: -16px;
+.shipNameContainer:after {
+  bottom: -10px;
   border-top-color: #ecf4e7;
   border-bottom-width: 0;
 }
-.ship__nameContainer .ship__renameButton {
-  position: relative;
-  background-color: #ecf4e7;
-  z-index: 100;
-  text-shadow: 3px 0px black, 0px 3px black, 3px 3px black, -3px 3px black, 3px -3px black, -3px -3px black, 3px 3px black, 3px -3px black, -3px 3px black, -3px -3px black, 2px 3px black, -2px 3px black, 2px -3px black, -2px -3px black, 3px 2px black, 3px -2px black, -3px 2px black, -3px -2px black, 1px 3px black, -1px 3px black, 1px -3px black, -1px -3px black, 3px 1px black, 3px -1px black, -3px 1px black, -3px -1px black;
-  display: inline-block;
-  vertical-align: middle;
-  font-size: 1.2em;
-  color: #ecf4e7;
-  text-transform: uppercase;
-}
-.ship__nameContainer .ship__renameButton:before,
-.ship__nameContainer .ship__renameButton:after {
-  content: "";
-  z-index: 50;
-  position: absolute;
-  display: block;
-  left: 0;
-  box-sizing: border-box;
-  width: 100%;
-  border-color: transparent;
-  border-style: solid;
-  border-width: 12px;
-}
-.ship__nameContainer .ship__renameButton:before {
-  top: -12px;
-  border-top-width: 0;
-  border-bottom-color: #ecf4e7;
-}
-.ship__nameContainer .ship__renameButton:after {
-  bottom: -12px;
-  border-top-color: #ecf4e7;
-  border-bottom-width: 0;
-}
-.ship__nameContainer .ship__name {
+.shipNameContainer .shipName {
   position: relative;
   background-color: #000000;
   z-index: 100;
   display: inline-block;
-  vertical-align: middle;
+  vertical-align: top;
   padding-left: 15px;
-  font-size: 2em;
+  padding-right: 15px;
+  font-size: 1.4em;
   color: #ecf4e7;
 }
-.ship__nameContainer .ship__name:before,
-.ship__nameContainer .ship__name:after {
+.shipNameContainer .shipName:before,
+.shipNameContainer .shipName:after {
   content: "";
   z-index: 50;
   position: absolute;
@@ -750,61 +708,64 @@ body .container {
   width: 100%;
   border-color: transparent;
   border-style: solid;
-  border-width: 16px;
+  border-width: 10px;
 }
-.ship__nameContainer .ship__name:before {
-  top: -16px;
+.shipNameContainer .shipName:before {
+  top: -10px;
   border-top-width: 0;
   border-bottom-color: #000000;
 }
-.ship__nameContainer .ship__name:after {
-  bottom: -16px;
+.shipNameContainer .shipName:after {
+  bottom: -10px;
   border-top-color: #000000;
   border-bottom-width: 0;
 }
-/*
-.crewCard2{
-	@cut : 5px;
-
-	.whiteBorder(@cut, 3px);
-	width : 130px;
-	text-align: center;
-	margin-top: 20px;
-	&:first-child, &:nth-child(2){
-		margin-top : 0px;
-	}
-
-	.crew__image{
-		.bsgBorder(@gray, @cut);
-		margin-bottom: @cut * 2;
-		cursor: pointer;
-		img{
-			height : 40px;
-		}
-	}
-	.crew__name{
-		margin-top: @cut *2 + 3;
-		.bsgBorder(@dark, @cut);
-		color: white;
-		font-size: 0.8em;
-		margin-bottom: @cut;
-	}
-	.crew__remove, .crew__newName{
-		margin-top: @cut *2;
-		.bsgBorder(black, @cut);
-		padding : 1px;
-		display: inline-block;
-		width : 44%;
-
-		&>*{
-			.bsgBorder(@white, @cut);
-			font-size: 0.6em;
-			cursor: pointer;
-			&:hover{
-				.bsgBorder(@yellow, @cut);
-			}
-		}
-	}
-
-}
+.shipNameContainer .shipGenerators {
+  display: inline-block;
+  vertical-align: top;
+  width: 208px;
+  /*.bsgBorder(@dark);
+		padding-left : 8px;
+		padding-right : 8px;
+		height : 44px;
 */
+}
+.shipNameContainer .shipGenerators .shipGeneratorOption {
+  display: inline-block;
+  vertical-align: top;
+  width: 80px;
+  font-family: jType;
+  text-align: center;
+  padding: 3px;
+  font-size: 0.4em;
+  border: 1px solid #292421;
+  cursor: pointer;
+  margin-left: -7px;
+  margin-top: -3px;
+  /*
+			.bsgBorder(@white, 3px);
+			padding-left: 5px;
+			padding-right: 5px;
+			margin-right: -5px;
+			font-size: 0.6em;
+			margin-bottom: 6px;
+
+			&>*:hover{
+				.bsgBorder(@yellow, 3px);
+			}
+			*/
+}
+.shipNameContainer .shipGenerators .shipGeneratorOption:hover,
+.shipNameContainer .shipGenerators .shipGeneratorOption.selected {
+  background-color: #f6eea3;
+}
+.shipNameContainer .shipRename {
+  text-shadow: 2px 0px black, 0px 2px black, 2px 2px black, -2px 2px black, 2px -2px black, -2px -2px black, 2px 2px black, 2px -2px black, -2px 2px black, -2px -2px black, 1px 2px black, -1px 2px black, 1px -2px black, -1px -2px black, 2px 1px black, 2px -1px black, -2px 1px black, -2px -1px black;
+  color: #ecf4e7;
+  display: inline-block;
+  vertical-align: top;
+  text-transform: uppercase;
+}
+.shipNameContainer .shipRename:hover {
+  color: #f6eea3;
+}
