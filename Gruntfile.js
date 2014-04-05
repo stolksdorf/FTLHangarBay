@@ -4,7 +4,7 @@ module.exports = function(grunt) {
 
 		less: {
 			all: {
-				src: './public/index.less',
+				src: './public/main.less',
 				dest: './public/distrib.css'
 			}
 		},

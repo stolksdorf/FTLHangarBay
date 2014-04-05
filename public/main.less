@@ -90,7 +90,7 @@ body{
 		}
 	}
 	.shipTypeOption{
-		.bsgBorder(@white, 10px);
+		.bsgBorder(@white, 5px);
 		.outline(3);
 
 		display        : inline-block;
@@ -111,8 +111,8 @@ body{
 			margin-top: -8px;
 		}
 
-		&:hover, .selected{
-			.bsgBorder(@yellow, 10px);
+		&:hover, &.selected{
+			.bsgBorder(@yellow, 5px);
 			color : @yellow;
 		}
 	}
@@ -121,7 +121,7 @@ body{
 .addCrew{
 	position : absolute;
 	top      : 600px;
-	left     : 50px;
+	left     : 300px;
 
 	.addCrewContainer{
 		width         : 166px;
@@ -155,6 +155,16 @@ body{
 	right     : 30px;
 
 	width : 320px;
+
+	.title{
+		i{
+			cursor: pointer;
+			&:hover{
+				color : @yellow;
+			}
+		}
+	}
+
 	.content{
 		padding-top: 12px;
 	}
@@ -240,6 +250,8 @@ body{
 		padding-left   : 15px;
 		padding-right   : 15px;
 
+		width : 370px;
+
 		font-size      : 1.4em;
 		color          : @white;
 	}
@@ -266,9 +278,13 @@ body{
 			margin-left: -7px;
 			margin-top: -3px;
 
+			background-color: @dark;
+			color : @white;
+
 
 			&:hover, &.selected{
 				background-color: @yellow;
+				color : black;
 			}
 			/*
 			.bsgBorder(@white, 3px);
