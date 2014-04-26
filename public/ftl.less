@@ -1,0 +1,81 @@
+.bevel(@color, @size : 10px){
+	background: @color;
+	background:
+		-moz-linear-gradient(45deg,  transparent @size, @color @size),
+		-moz-linear-gradient(135deg, transparent @size, @color @size),
+		-moz-linear-gradient(225deg, transparent @size, @color @size),
+		-moz-linear-gradient(315deg, transparent @size, @color @size);
+	background:
+		-o-linear-gradient(45deg,  transparent @size, @color @size),
+		-o-linear-gradient(135deg, transparent @size, @color @size),
+		-o-linear-gradient(225deg, transparent @size, @color @size),
+		-o-linear-gradient(315deg, transparent @size, @color @size);
+	background:
+		-webkit-linear-gradient(45deg,  transparent @size, @color @size),
+		-webkit-linear-gradient(135deg, transparent @size, @color @size),
+		-webkit-linear-gradient(225deg, transparent @size, @color @size),
+		-webkit-linear-gradient(315deg, transparent @size, @color @size);
+
+	background-position: bottom left, bottom right, top right, top left;
+	-moz-background-size: 51% 51%;
+	-webkit-background-size: 51% 51%;
+	background-size: 51% 51%;
+	background-repeat: no-repeat;
+
+}
+
+
+.menu2 {
+	.bevel(@white);
+	padding:  8px;
+	position : relative;
+
+	.title {
+		position: absolute;
+		font-family: Bitmap;
+		background-color: @white;
+		text-transform: uppercase;
+		font-size: 0.7em;
+		padding-left: 20px;
+		padding-right: 10px;
+		padding-bottom: 5px;
+		.outline(2);
+
+		&:after{
+			content: "";
+			z-index: 50;
+			position: absolute;
+			display: block;
+			left: 100%;
+			top: 0;
+			box-sizing: border-box;
+			border-color: transparent;
+			border-style: solid;
+			border-width: 38px;
+			border-bottom-width: 0;
+			border-top-color: @white;
+			border-left-width: 0;
+		}
+	}
+
+	.content{
+		.bevel(@dark);
+		padding : 8px;
+		padding-top: 45px;
+	}
+
+
+}
+
+
+.outline(@dist){
+	.outline(@dist, @dist, "@{dist}px 0px black, 0px @{dist}px black");
+}
+.outline(@dist, @static, @shadow) when (@dist > 0) and (isstring(@shadow)) {
+	@shadow-loop: "@{shadow}, @{dist}px @{static}px black, -@{dist}px @{static}px black, @{dist}px -@{static}px black, -@{dist}px -@{static}px black, @{static}px @{dist}px black, @{static}px -@{dist}px black, -@{static}px @{dist}px black, -@{static}px -@{dist}px black";
+	.outline(@dist - 1, @static, @shadow-loop);
+}
+.outline(@dist, @static, @shadow) when (@dist = 0){
+	text-shadow: ~"@{shadow}";
+	color : @white;
+}

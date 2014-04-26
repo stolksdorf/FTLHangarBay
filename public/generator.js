@@ -2,12 +2,12 @@ var lib = {
 	"ship" : {
 		"char_limit" : 16,
 		"num_words" : [1,2,2,2,2],
-		"prefixes" : ["The ", "The ","USS ", "VSS ", ""],
+		"prefixes" : ["The ", "The ","USS ", "VSS "],
 		"general" : ["Boring&", "&Ship"],
 		"pirate" : [
 			"Rascal's&", "Bane","Captain's&","&Pride","Devil's&","&Death","Horrid&","Red&","Night's&",
 			"Knave","Treasure","Pirate's&","Rage","Screaming&","Demon","Black&","Cursed&","Cannon","Doom",
-			"Fear","Foul&","Night","&Greed","Greedy&","Poison","Pride","Shameful&","Vile&","Jewel","Wandering&","Hangman's&",
+			"Fear","Foul&","Night","&Greed","Greedy&","Poison","Shameful&","Vile&","Jewel","Wandering&","Hangman's&",
 			"Hangman","Plunder","Doubloon", "Damned&", "&of the Sky", "&of the Stars", "Howl", "Mystery", "Scurvy&",
 			"Calypso's&", "&of the East", "&of the West", "&of the North", "&of the South", "Black&", "Cruel&", "Fall of&"
 		],
@@ -45,7 +45,7 @@ var lib = {
 			"Sunrise","Windbumpkin","Shine","Charity","Fluttering&","Bubble", "Flake","Bonnet","Blissful&",
 			"Tickle", "Classy&", "Spoon", "Lemon", "Rumble", "Sauce", "Cotton", "Pillow", "Mahogany&",
 			"Sparky&", "Sparkle", "Fizzle", "Mister&", "Shiney&", "Dainty&","Perky&","Precious","Darling",
-			"Cuddle","Scrumptious&","Dainty&","Clumsy&","Wiggle","Princess"
+			"Cuddle","Scrumptious","Dainty&","Clumsy&","Wiggle","Princess"
 		]
 	},
 
@@ -55,7 +55,13 @@ var lib = {
 		"prefixes" :[""],
 
 		"general" : [
-			"Spoons", "Blub Blub", "Blup Blup", "Stick", "Tips", "Nibz"
+			"Spoons", "Blub Blub", "Blup Blup", "Stick", "Tips", "Nibz", "Notch","Scott","Gumpo","Scoops","Swamps",
+			"Spoons","Sticks","Butters","Mullett","Giles","Narth","Hammer","Cake","Kirby","Steve","King","Bear","Brain",
+			"Emma","Jamz","Batman","Melon","Franz","Turtle","Hawk","Doc","Bach","Hutz","Zas","West","Marco","Duck","Brakes",
+			"Pinz","Fuzz","Castle","Arrow","Slings","Fortune","Mud","Socks","Simba","Bang","Scar","Dragon","Leaf","Elsa",
+			"Cats","Ophelia","Snooze","Rum","Frodo","Frak","Fox","Frisbee","Red","Hugz","Hedge","Antler","Spike","Clip",
+			"Cabbage","Fang","Zeke","Beans","Ferret","Target","Straws","Grapes","Bolt","Zoom","Cookie","Nugget","Lemon",
+			"Jelly","Shark","Poof","Mocha","Han","Minerva","Timber","Sprinkle","Ernesto","Goat","Hippo"
 		],
 		"lanius"  : [
 			"Aluminium","Bismuth","Chromium","Cobalt","Copper","Gallium","Iron","Lead","Magnesium","Mercury",
@@ -82,11 +88,13 @@ var lib = {
 		"slug"    : [
 			"SlugBro", "Auditore","Ezio","Booth","Balthasar","Gerard","Gavrilo","Princip","Kubis","Jozef","Gabcik", "Corday",
 			"Godse","Yusupov","Oswald","Lugovoi","Brutus","Dismas","Gestas","Turpin","Villon","Peruggia","Abagnale","Mason",
-			"Payne", "Gugasian", "Spaggiari"
+			"Payne", "Gugasian", "Spaggiari", "Mort"
 		],
 		"engi"    : [
 			"EngiBro", "Neer","Gin","Eli","Cylon","Six","Seven","Bit","Enzo","Dozer","Kaylee","Megabyte","Hexadecimal",
-			"Mouse","Hack","Slash","Andromeda","Nuts","Bolts","Wrench","TheHammer","Optic"
+			"Mouse","Hack","Slash","Andromeda","Nuts","Bolts","Wrench","TheHammer","Optic", "29-P", "LLori", "HH-34",
+			"IC-349", "NGC-7129", "DR-6", "RCW-49", "G11-2-03", "N44F", "N-70", "LH-95", "DEML-71", "SNR-0540-693", "NI-32-D",
+			"SN-1987a", "RI-36", "E0102-72"
 		],
 		"mantis"  : [
 			"MantisBro", "B'eggh","Bbo'nats","Bbothont","Boiquaatho","Camokel","Chigosthanta","Chotho","Clinacya","Ctekelllacl",
@@ -108,6 +116,8 @@ var lib = {
 String.prototype.endsWith = function(suffix) {
     return this.indexOf(suffix, this.length - suffix.length) !== -1;
 };
+
+
 
 
 var generator = function(type, lists){
@@ -148,3 +158,5 @@ var generator = function(type, lists){
 	return result;
 
 };
+
+generator('ship', ['jaeger', 'starfleet'])

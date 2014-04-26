@@ -1,6 +1,9 @@
 
 @import "mixins.less";
 
+@import "ftl.less";
+
+
 @white  : #ecf4e7;
 @gray   : #7c6464;
 @yellow : #f6eea3;
@@ -19,13 +22,6 @@
 	font-family : jType;
 	src         : url('/font/JustinFont12.ttf');
 }
-
-
-
-
-
-
-
 
 
 
@@ -64,58 +60,55 @@ body{
 	position : absolute;
 	top      : 170px;
 	left     : 30px;
-
-	width    : 236px;
-
+	width    : 262px;
 	.shipSelect__container{
+		padding-left: 5px;
+		padding-right: 5px;
 		.shipChoice{
-			.bsgBorder(@gray, 10px);
-
+			.bevel(@gray);
 			display        : inline-block;
 			vertical-align : top;
-
+			padding: 8px;
 			height         : 60px;
 			width          : 100px;
-			margin-top     : 30px;
-
+			margin-bottom     : 30px;
+			margin : 5px;
 			cursor         : pointer;
-
 			img{
 				width : 100%;
 			}
-
 			&:hover, .selected{
-				.bsgBorder(@yellow, 10px);
+				.bevel(@yellow);
 			}
 		}
 	}
-	.shipTypeOption{
-		.bsgBorder(@white, 5px);
-		.outline(3);
-
-		display        : inline-block;
-		vertical-align : top;
+	.shipTypeOptionContainer{
 		text-align: center;
+		margin-top: 10px;
 
-		height         : 23px;
-		margin-top     : 30px;
-		margin-left : 11px;
-		margin-right : 11px;
-		padding        : 0px 13px;
+		.shipTypeOption{
+			.bevel(@white, 5px);
+			.outline(3);
+			display        : inline-block;
+			vertical-align : top;
+			text-align: center;
 
-		cursor         : pointer;
-		font-size      : 1.2em;
-		line-height    : 1em;
-		text-align     : center;
-		&>*{
-			margin-top: -8px;
+			margin: 0px 16px;
+			padding        : 0px 14px;
+
+			cursor         : pointer;
+			font-size      : 1.2em;
+			line-height    : 1em;
+			text-align     : center;
+
+			&:hover, &.selected{
+				.bevel(@yellow, 5px);
+				color : @yellow;
+			}
 		}
 
-		&:hover, &.selected{
-			.bsgBorder(@yellow, 5px);
-			color : @yellow;
-		}
 	}
+
 }
 
 .addCrew{

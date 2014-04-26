@@ -183,6 +183,59 @@
   border-top-color: #292421;
   border-bottom-width: 0;
 }
+.menu2 {
+  background: #ecf4e7;
+  background: -moz-linear-gradient(45deg, transparent 10px, #ecf4e7 10px), -moz-linear-gradient(135deg, transparent 10px, #ecf4e7 10px), -moz-linear-gradient(225deg, transparent 10px, #ecf4e7 10px), -moz-linear-gradient(315deg, transparent 10px, #ecf4e7 10px);
+  background: -o-linear-gradient(45deg, transparent 10px, #ecf4e7 10px), -o-linear-gradient(135deg, transparent 10px, #ecf4e7 10px), -o-linear-gradient(225deg, transparent 10px, #ecf4e7 10px), -o-linear-gradient(315deg, transparent 10px, #ecf4e7 10px);
+  background: -webkit-linear-gradient(45deg, transparent 10px, #ecf4e7 10px), -webkit-linear-gradient(135deg, transparent 10px, #ecf4e7 10px), -webkit-linear-gradient(225deg, transparent 10px, #ecf4e7 10px), -webkit-linear-gradient(315deg, transparent 10px, #ecf4e7 10px);
+  background-position: bottom left, bottom right, top right, top left;
+  -moz-background-size: 51% 51%;
+  -webkit-background-size: 51% 51%;
+  background-size: 51% 51%;
+  background-repeat: no-repeat;
+  padding: 8px;
+  position: relative;
+}
+.menu2 .title {
+  position: absolute;
+  font-family: Bitmap;
+  background-color: #ecf4e7;
+  text-transform: uppercase;
+  font-size: 0.7em;
+  padding-left: 20px;
+  padding-right: 10px;
+  padding-bottom: 5px;
+  text-shadow: 2px 0px black, 0px 2px black, 2px 2px black, -2px 2px black, 2px -2px black, -2px -2px black, 2px 2px black, 2px -2px black, -2px 2px black, -2px -2px black, 1px 2px black, -1px 2px black, 1px -2px black, -1px -2px black, 2px 1px black, 2px -1px black, -2px 1px black, -2px -1px black;
+  color: #ecf4e7;
+}
+.menu2 .title:after {
+  content: "";
+  z-index: 50;
+  position: absolute;
+  display: block;
+  left: 100%;
+  top: 0;
+  box-sizing: border-box;
+  border-color: transparent;
+  border-style: solid;
+  border-width: 38px;
+  border-bottom-width: 0;
+  border-top-color: #ecf4e7;
+  border-left-width: 0;
+}
+.menu2 .content {
+  background: #292421;
+  background: -moz-linear-gradient(45deg, transparent 10px, #292421 10px), -moz-linear-gradient(135deg, transparent 10px, #292421 10px), -moz-linear-gradient(225deg, transparent 10px, #292421 10px), -moz-linear-gradient(315deg, transparent 10px, #292421 10px);
+  background: -o-linear-gradient(45deg, transparent 10px, #292421 10px), -o-linear-gradient(135deg, transparent 10px, #292421 10px), -o-linear-gradient(225deg, transparent 10px, #292421 10px), -o-linear-gradient(315deg, transparent 10px, #292421 10px);
+  background: -webkit-linear-gradient(45deg, transparent 10px, #292421 10px), -webkit-linear-gradient(135deg, transparent 10px, #292421 10px), -webkit-linear-gradient(225deg, transparent 10px, #292421 10px), -webkit-linear-gradient(315deg, transparent 10px, #292421 10px);
+  background-position: bottom left, bottom right, top right, top left;
+  -moz-background-size: 51% 51%;
+  -webkit-background-size: 51% 51%;
+  background-size: 51% 51%;
+  background-repeat: no-repeat;
+  padding: 8px;
+  padding-top: 45px;
+}
 @font-face {
   font-family: Bitmap;
   src: url('/font/Bitmap-Regular.ttf');
@@ -301,155 +354,83 @@ body .container {
   position: absolute;
   top: 170px;
   left: 30px;
-  width: 236px;
+  width: 262px;
+}
+.shipSelector .shipSelect__container {
+  padding-left: 5px;
+  padding-right: 5px;
 }
 .shipSelector .shipSelect__container .shipChoice {
-  position: relative;
-  background-color: #7c6464;
-  z-index: 100;
+  background: #7c6464;
+  background: -moz-linear-gradient(45deg, transparent 10px, #7c6464 10px), -moz-linear-gradient(135deg, transparent 10px, #7c6464 10px), -moz-linear-gradient(225deg, transparent 10px, #7c6464 10px), -moz-linear-gradient(315deg, transparent 10px, #7c6464 10px);
+  background: -o-linear-gradient(45deg, transparent 10px, #7c6464 10px), -o-linear-gradient(135deg, transparent 10px, #7c6464 10px), -o-linear-gradient(225deg, transparent 10px, #7c6464 10px), -o-linear-gradient(315deg, transparent 10px, #7c6464 10px);
+  background: -webkit-linear-gradient(45deg, transparent 10px, #7c6464 10px), -webkit-linear-gradient(135deg, transparent 10px, #7c6464 10px), -webkit-linear-gradient(225deg, transparent 10px, #7c6464 10px), -webkit-linear-gradient(315deg, transparent 10px, #7c6464 10px);
+  background-position: bottom left, bottom right, top right, top left;
+  -moz-background-size: 51% 51%;
+  -webkit-background-size: 51% 51%;
+  background-size: 51% 51%;
+  background-repeat: no-repeat;
   display: inline-block;
   vertical-align: top;
+  padding: 8px;
   height: 60px;
   width: 100px;
-  margin-top: 30px;
+  margin-bottom: 30px;
+  margin: 5px;
   cursor: pointer;
-}
-.shipSelector .shipSelect__container .shipChoice:before,
-.shipSelector .shipSelect__container .shipChoice:after {
-  content: "";
-  z-index: 50;
-  position: absolute;
-  display: block;
-  left: 0;
-  box-sizing: border-box;
-  width: 100%;
-  border-color: transparent;
-  border-style: solid;
-  border-width: 10px;
-}
-.shipSelector .shipSelect__container .shipChoice:before {
-  top: -10px;
-  border-top-width: 0;
-  border-bottom-color: #7c6464;
-}
-.shipSelector .shipSelect__container .shipChoice:after {
-  bottom: -10px;
-  border-top-color: #7c6464;
-  border-bottom-width: 0;
 }
 .shipSelector .shipSelect__container .shipChoice img {
   width: 100%;
 }
 .shipSelector .shipSelect__container .shipChoice:hover,
 .shipSelector .shipSelect__container .shipChoice .selected {
-  position: relative;
-  background-color: #f6eea3;
-  z-index: 100;
+  background: #f6eea3;
+  background: -moz-linear-gradient(45deg, transparent 10px, #f6eea3 10px), -moz-linear-gradient(135deg, transparent 10px, #f6eea3 10px), -moz-linear-gradient(225deg, transparent 10px, #f6eea3 10px), -moz-linear-gradient(315deg, transparent 10px, #f6eea3 10px);
+  background: -o-linear-gradient(45deg, transparent 10px, #f6eea3 10px), -o-linear-gradient(135deg, transparent 10px, #f6eea3 10px), -o-linear-gradient(225deg, transparent 10px, #f6eea3 10px), -o-linear-gradient(315deg, transparent 10px, #f6eea3 10px);
+  background: -webkit-linear-gradient(45deg, transparent 10px, #f6eea3 10px), -webkit-linear-gradient(135deg, transparent 10px, #f6eea3 10px), -webkit-linear-gradient(225deg, transparent 10px, #f6eea3 10px), -webkit-linear-gradient(315deg, transparent 10px, #f6eea3 10px);
+  background-position: bottom left, bottom right, top right, top left;
+  -moz-background-size: 51% 51%;
+  -webkit-background-size: 51% 51%;
+  background-size: 51% 51%;
+  background-repeat: no-repeat;
 }
-.shipSelector .shipSelect__container .shipChoice:hover:before,
-.shipSelector .shipSelect__container .shipChoice .selected:before,
-.shipSelector .shipSelect__container .shipChoice:hover:after,
-.shipSelector .shipSelect__container .shipChoice .selected:after {
-  content: "";
-  z-index: 50;
-  position: absolute;
-  display: block;
-  left: 0;
-  box-sizing: border-box;
-  width: 100%;
-  border-color: transparent;
-  border-style: solid;
-  border-width: 10px;
+.shipSelector .shipTypeOptionContainer {
+  text-align: center;
+  margin-top: 10px;
 }
-.shipSelector .shipSelect__container .shipChoice:hover:before,
-.shipSelector .shipSelect__container .shipChoice .selected:before {
-  top: -10px;
-  border-top-width: 0;
-  border-bottom-color: #f6eea3;
-}
-.shipSelector .shipSelect__container .shipChoice:hover:after,
-.shipSelector .shipSelect__container .shipChoice .selected:after {
-  bottom: -10px;
-  border-top-color: #f6eea3;
-  border-bottom-width: 0;
-}
-.shipSelector .shipTypeOption {
-  position: relative;
-  background-color: #ecf4e7;
-  z-index: 100;
+.shipSelector .shipTypeOptionContainer .shipTypeOption {
+  background: #ecf4e7;
+  background: -moz-linear-gradient(45deg, transparent 5px, #ecf4e7 5px), -moz-linear-gradient(135deg, transparent 5px, #ecf4e7 5px), -moz-linear-gradient(225deg, transparent 5px, #ecf4e7 5px), -moz-linear-gradient(315deg, transparent 5px, #ecf4e7 5px);
+  background: -o-linear-gradient(45deg, transparent 5px, #ecf4e7 5px), -o-linear-gradient(135deg, transparent 5px, #ecf4e7 5px), -o-linear-gradient(225deg, transparent 5px, #ecf4e7 5px), -o-linear-gradient(315deg, transparent 5px, #ecf4e7 5px);
+  background: -webkit-linear-gradient(45deg, transparent 5px, #ecf4e7 5px), -webkit-linear-gradient(135deg, transparent 5px, #ecf4e7 5px), -webkit-linear-gradient(225deg, transparent 5px, #ecf4e7 5px), -webkit-linear-gradient(315deg, transparent 5px, #ecf4e7 5px);
+  background-position: bottom left, bottom right, top right, top left;
+  -moz-background-size: 51% 51%;
+  -webkit-background-size: 51% 51%;
+  background-size: 51% 51%;
+  background-repeat: no-repeat;
   text-shadow: 3px 0px black, 0px 3px black, 3px 3px black, -3px 3px black, 3px -3px black, -3px -3px black, 3px 3px black, 3px -3px black, -3px 3px black, -3px -3px black, 2px 3px black, -2px 3px black, 2px -3px black, -2px -3px black, 3px 2px black, 3px -2px black, -3px 2px black, -3px -2px black, 1px 3px black, -1px 3px black, 1px -3px black, -1px -3px black, 3px 1px black, 3px -1px black, -3px 1px black, -3px -1px black;
   color: #ecf4e7;
   display: inline-block;
   vertical-align: top;
-  height: 23px;
-  margin-top: 30px;
-  margin-left: 11px;
-  margin-right: 11px;
-  padding: 0px 13px;
+  margin: 0px 16px;
+  padding: 0px 14px;
   cursor: pointer;
   font-size: 1.2em;
   line-height: 1em;
   text-align: center;
 }
-.shipSelector .shipTypeOption:before,
-.shipSelector .shipTypeOption:after {
-  content: "";
-  z-index: 50;
-  position: absolute;
-  display: block;
-  left: 0;
-  box-sizing: border-box;
-  width: 100%;
-  border-color: transparent;
-  border-style: solid;
-  border-width: 5px;
-}
-.shipSelector .shipTypeOption:before {
-  top: -5px;
-  border-top-width: 0;
-  border-bottom-color: #ecf4e7;
-}
-.shipSelector .shipTypeOption:after {
-  bottom: -5px;
-  border-top-color: #ecf4e7;
-  border-bottom-width: 0;
-}
-.shipSelector .shipTypeOption > * {
-  margin-top: -8px;
-}
-.shipSelector .shipTypeOption:hover,
-.shipSelector .shipTypeOption.selected {
-  position: relative;
-  background-color: #f6eea3;
-  z-index: 100;
+.shipSelector .shipTypeOptionContainer .shipTypeOption:hover,
+.shipSelector .shipTypeOptionContainer .shipTypeOption.selected {
+  background: #f6eea3;
+  background: -moz-linear-gradient(45deg, transparent 5px, #f6eea3 5px), -moz-linear-gradient(135deg, transparent 5px, #f6eea3 5px), -moz-linear-gradient(225deg, transparent 5px, #f6eea3 5px), -moz-linear-gradient(315deg, transparent 5px, #f6eea3 5px);
+  background: -o-linear-gradient(45deg, transparent 5px, #f6eea3 5px), -o-linear-gradient(135deg, transparent 5px, #f6eea3 5px), -o-linear-gradient(225deg, transparent 5px, #f6eea3 5px), -o-linear-gradient(315deg, transparent 5px, #f6eea3 5px);
+  background: -webkit-linear-gradient(45deg, transparent 5px, #f6eea3 5px), -webkit-linear-gradient(135deg, transparent 5px, #f6eea3 5px), -webkit-linear-gradient(225deg, transparent 5px, #f6eea3 5px), -webkit-linear-gradient(315deg, transparent 5px, #f6eea3 5px);
+  background-position: bottom left, bottom right, top right, top left;
+  -moz-background-size: 51% 51%;
+  -webkit-background-size: 51% 51%;
+  background-size: 51% 51%;
+  background-repeat: no-repeat;
   color: #f6eea3;
-}
-.shipSelector .shipTypeOption:hover:before,
-.shipSelector .shipTypeOption.selected:before,
-.shipSelector .shipTypeOption:hover:after,
-.shipSelector .shipTypeOption.selected:after {
-  content: "";
-  z-index: 50;
-  position: absolute;
-  display: block;
-  left: 0;
-  box-sizing: border-box;
-  width: 100%;
-  border-color: transparent;
-  border-style: solid;
-  border-width: 5px;
-}
-.shipSelector .shipTypeOption:hover:before,
-.shipSelector .shipTypeOption.selected:before {
-  top: -5px;
-  border-top-width: 0;
-  border-bottom-color: #f6eea3;
-}
-.shipSelector .shipTypeOption:hover:after,
-.shipSelector .shipTypeOption.selected:after {
-  bottom: -5px;
-  border-top-color: #f6eea3;
-  border-bottom-width: 0;
 }
 .addCrew {
   position: absolute;

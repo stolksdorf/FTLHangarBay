@@ -19,13 +19,16 @@ ShipSelector = xo.view.extend({
 	setupShipChoices : function(){
 		var self = this;
 		_.each(config.ships, function(shipData, shipName){
-			var temp = $(self.shipChoiceTemplate).appendTo(self.dom.container);
-			temp.click(function(){
-				self.trigger('selectShip', shipName, self.currentType);
+			_.each(shipData, function(data, type){
+				var temp = $(self.shipChoiceTemplate).appendTo(self.dom.container);
+				temp.addClass(type);
+				temp.find('img').attr('src', data.mini_image)
+				temp.click(function(){
+					self.trigger('selectShip', shipName, type);
+				});
+				self.shipChoices[shipName] = temp;
 			});
-			self.shipChoices[shipName] = temp;
 		});
-
 		return this;
 	},
 
@@ -41,11 +44,14 @@ ShipSelector = xo.view.extend({
 		var self = this;
 		if(newType === this.currentType) return;
 
+		this.dom.container.find('.shipChoice').hide();
+		this.dom.container.find('.' + newType).show();
+/*
 		_.each(this.shipChoices, function(shipElement, shipName){
 			var shipData = config.ships[shipName][newType]
 			shipElement.find('img').attr('src', shipData.mini_image);
 		});
-
+*/
 		this.dom.$shipTypeSelector.removeClass('selected');
 		this.dom[newType].addClass('selected');
 

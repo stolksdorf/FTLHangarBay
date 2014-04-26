@@ -159,11 +159,6 @@ var config = {
 				"image" : "/img/ships/laniusB.png",
 				"mini_image" : "/img/ships/miniship_anaerobic_cruiser_2.png",
 				"crew" : ["lanius", "lanius", "engi"]
-			},
-			"typeC" : {
-				"image" : "/img/ships/laniusB.png",
-				"mini_image" : "/img/ships/miniship_anaerobic_cruiser_2.png",
-				"crew" : ["lanius", "lanius", "engi"]
 			}
 		},
 		"crystal" : {
@@ -173,11 +168,6 @@ var config = {
 				"crew" : ["human", "human", "crystal", "crystal"]
 			},
 			"typeB" : {
-				"image" : "/img/ships/crystalB.png",
-				"mini_image" : "/img/ships/miniship_crystal_cruiser_2.png",
-				"crew" : ["crystal", "crystal", "crystal"]
-			},
-			"typeC" : {
 				"image" : "/img/ships/crystalB.png",
 				"mini_image" : "/img/ships/miniship_crystal_cruiser_2.png",
 				"crew" : ["crystal", "crystal", "crystal"]
