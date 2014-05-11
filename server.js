@@ -56,10 +56,10 @@ app.get('/api/*', function(req, res){
 
 
 
-module.exports = {
-	start : function(){
-		app.listen(port, function() {
-			console.log("Listening on " + port);
-		});
-	}
-}
+
+
+
+
+app.listen(port, function() {
+	console.log("Listening on " + port);
+});
