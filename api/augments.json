@@ -1,0 +1,250 @@
+{
+	"reverse_ion_field" : {
+		"id" : "reverse_ion_field",
+		"name" : "Reverse Ion Field",
+		"effect" : "50% chance to resist ion damage.",
+		"cost" : 60,
+		"rarity" : 2,
+		"stackable" : true
+	},
+	"stealth_weapons" : {
+		"id" : "stealth_weapons",
+		"name" : "Stealth Weapons",
+		"effect" : "Shooting while cloaked doesn't decrease cloaking time.",
+		"cost" : 50,
+		"rarity" : 3,
+		"stackable" : false
+	},
+	"repair_arm" : {
+		"id" : "repair_arm",
+		"name" : "Repair Arm",
+		"effect" : "Repairs 1-2 hull every time you pick up scrap, but scrap rewards are decreased by 15%.",
+		"cost" : 50,
+		"rarity" : 3,
+		"stackable" : false
+	},
+	"scrap_recovery_arm" : {
+		"id" : "scrap_recovery_arm",
+		"name" : "Scrap Recovery Arm",
+		"effect" : "Increases scrap collection by 10%.",
+		"cost" : 50,
+		"rarity" : 1,
+		"stackable" : true
+	},
+	"longranged_scanners" : {
+		"id" : "longranged_scanners",
+		"name" : "Long-Ranged Scanners",
+		"effect" : "Warns of ships and hazards in adjacent systems.",
+		"cost" : 30,
+		"rarity" : 1,
+		"stackable" : false
+	},
+	"automated_reloader" : {
+		"id" : "automated_reloader",
+		"name" : "Automated Re-Loader",
+		"effect" : "Cooldown on weapons is decreased by 10%.",
+		"cost" : 40,
+		"rarity" : 2,
+		"stackable" : true
+	},
+	"shield_charge_boosters" : {
+		"id" : "shield_charge_boosters",
+		"name" : "Shield Charge Boosters",
+		"effect" : "Shields recharge 15% faster.",
+		"cost" : 45,
+		"rarity" : 2,
+		"stackable" : true
+	},
+	"weapon_preigniter" : {
+		"id" : "weapon_preigniter",
+		"name" : "Weapon Pre-igniter",
+		"effect" : "All powered weapons are ready to shoot after an FTL jump.",
+		"cost" : 120,
+		"rarity" : 4,
+		"stackable" : false
+	},
+	"ftl_recharge_booster" : {
+		"id" : "ftl_recharge_booster",
+		"name" : "FTL Recharge Booster",
+		"effect" : "FTL Drive charges 25% faster.",
+		"cost" : 50,
+		"rarity" : 2,
+		"stackable" : true
+	},
+	"adv_ftl_navigation" : {
+		"id" : "adv_ftl_navigation",
+		"name" : "Adv. FTL Navigation",
+		"effect" : "The ship can jump to any previously visited beacon.",
+		"cost" : 60,
+		"rarity" : 3,
+		"stackable" : false
+	},
+	"drone_recovery_arm" : {
+		"id" : "drone_recovery_arm",
+		"name" : "Drone Recovery Arm",
+		"effect" : "Drone parts are recovered after a battle if the drone was not destroyed. Does not include Boarding or Hull Repair Drones",
+		"cost" : 50,
+		"rarity" : 2,
+		"stackable" : false
+	},
+	"ftl_jammer" : {
+		"id" : "ftl_jammer",
+		"name" : "FTL Jammer",
+		"effect" : "Doubles enemy FTL recharge time.",
+		"cost" : 30,
+		"rarity" : 3,
+		"stackable" : false
+	},
+	"rock_plating" : {
+		"id" : "rock_plating",
+		"name" : "Rock Plating",
+		"effect" : "15% chance to resist hull damage.",
+		"cost" : 80,
+		"rarity" : 0,
+		"stackable" : false
+	},
+	"crystal_vengeance" : {
+		"id" : "crystal_vengeance",
+		"name" : "Crystal Vengeance",
+		"effect" : "Every time your ship takes damage, there is a 10 percent chance to break off a shard that flies at your enemy.",
+		"cost" : 80,
+		"rarity" : 0,
+		"stackable" : false
+	},
+	"zoltan_shield" : {
+		"id" : "zoltan_shield",
+		"name" : "Zoltan Shield",
+		"effect" : "An additional shield that can take 5 damage, stops missiles, and prevents boarding/mind control. Takes twice the damage from ion weapons.",
+		"cost" : 80,
+		"rarity" : 0,
+		"stackable" : false
+	},
+	"engi_medbot_dispersal" : {
+		"id" : "engi_medbot_dispersal",
+		"name" : "Engi Med-bot Dispersal",
+		"effect" : "While med-bay is powered all crew is healed at 1/4 base rate. Does not increase with Med-Bay upgrades.",
+		"cost" : 60,
+		"rarity" : 0,
+		"stackable" : false
+	},
+	"slug_repair_gel" : {
+		"id" : "slug_repair_gel",
+		"name" : "Slug Repair Gel",
+		"effect" : "Automatically repairs any hull breaches.",
+		"cost" : 60,
+		"rarity" : 0,
+		"stackable" : false
+	},
+	"mantis_pheromones" : {
+		"id" : "mantis_pheromones",
+		"name" : "Mantis Pheromones",
+		"effect" : "Crew moves 25% faster.",
+		"cost" : 50,
+		"rarity" : 0,
+		"stackable" : false
+	},
+	"drone_reactor_booster" : {
+		"id" : "drone_reactor_booster",
+		"name" : "Drone Reactor Booster",
+		"effect" : "Drones speed is increased by 50%.",
+		"cost" : 50,
+		"rarity" : 0,
+		"stackable" : false
+	},
+	"titanium_system_casing" : {
+		"id" : "titanium_system_casing",
+		"name" : "Titanium System Casing",
+		"effect" : "15% chance to resist system damage.",
+		"cost" : 100,
+		"rarity" : 0,
+		"stackable" : false
+	},
+	"lifeform_scanner" : {
+		"id" : "lifeform_scanner",
+		"name" : "Lifeform Scanner",
+		"effect" : "Show location of hidden lifeforms on enemy ship even when sensors are down",
+		"cost" : 40,
+		"rarity" : "???",
+		"stackable" : false
+	},
+	"zoltan_shield_bypass" : {
+		"id" : "zoltan_shield_bypass",
+		"name" : "Zoltan Shield Bypass",
+		"effect" : "Allows teleporting and mind control through Super Shields",
+		"cost" : 55,
+		"rarity" : "???",
+		"stackable" : false
+	},
+	"defense_drone_scrambler" : {
+		"id" : "defense_drone_scrambler",
+		"name" : "Defense Drone Scrambler",
+		"effect" : "Disrupts targeting by enemy Defense Drones",
+		"cost" : 80,
+		"rarity" : "???",
+		"stackable" : false
+	},
+	"backup_dna_bank" : {
+		"id" : "backup_dna_bank",
+		"name" : "Backup DNA Bank",
+		"effect" : "Crew that dies won't be lost if Cloning Bay is down",
+		"cost" : 40,
+		"rarity" : "???",
+		"stackable" : false
+	},
+	"battery_charger" : {
+		"id" : "battery_charger",
+		"name" : "Battery Charger",
+		"effect" : "Decrease Backup battery recharge time by 50%",
+		"cost" : 40,
+		"rarity" : "???",
+		"stackable" : false
+	},
+	"emergency_respirators" : {
+		"id" : "emergency_respirators",
+		"name" : "Emergency Respirators",
+		"effect" : "Crew take 50% damage in vacuum",
+		"cost" : 50,
+		"rarity" : "???",
+		"stackable" : false
+	},
+	"fire_suppression" : {
+		"id" : "fire_suppression",
+		"name" : "Fire Suppression",
+		"effect" : "Automatically puts out fires on ship",
+		"cost" : 65,
+		"rarity" : "???",
+		"stackable" : false
+	},
+	"explosive_replicator" : {
+		"id" : "explosive_replicator",
+		"name" : "Explosive Replicator",
+		"effect" : "Missile based weapons have a 50% chance of not using a missile",
+		"cost" : 60,
+		"rarity" : "???",
+		"stackable" : false
+	},
+	"distraction_buoys" : {
+		"id" : "distraction_buoys",
+		"name" : "Distraction Buoys",
+		"effect" : "Delays Rebels 1 jump at start of each sector",
+		"cost" : 55,
+		"rarity" : "???",
+		"stackable" : false
+	},
+	"hacking_stun" : {
+		"id" : "hacking_stun",
+		"name" : "Hacking Stun",
+		"effect" : "Add stun effect to Hacking system activation",
+		"cost" : 60,
+		"rarity" : "???",
+		"stackable" : false
+	},
+	"reconstructive_teleport" : {
+		"id" : "reconstructive_teleport",
+		"name" : "Reconstructive Teleport",
+		"effect" : "Heals crewmembers to full with each teleport",
+		"cost" : 70,
+		"rarity" : "???",
+		"stackable" : false
+	}
+}

@@ -1,0 +1,27 @@
+{
+	"reactor" : {
+		"id" : "reactor",
+		"name" : "Reactor",
+		"cost" : [30,30,30,30,30,20,20,20,20,20,25,25,25,25,25,30,30,30,30,30,35,35,35,35,35]
+	},
+	"pilot" : {
+		"id" : "pilot",
+		"name" : "Piloting",
+		"cost" : [0,20,50]
+	},
+	"backup_battery" : {
+		"id" : "backup_battery",
+		"name" : "Backup Battery",
+		"cost" : [35, 50]
+	},
+	"sensors" : {
+		"id" : "sensors",
+		"name" : "Sensors",
+		"cost" : [40,25,40]
+	},
+	"doors" : {
+		"id" : "doors",
+		"name" : "Doors",
+		"cost" : [60,35,50]
+	}
+}

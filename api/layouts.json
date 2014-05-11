@@ -1,0 +1,39 @@
+{
+	"stealth_a" : {
+		"id" : "stealth_a",
+		"adjacent_rooms" : {
+			"pilot" : ["o2"],
+			"o2" : ["pilot", "empty1", "weapons"],
+			"empty1" : ["o2", "airlock"],
+			"weapons" : ["o2", "teleporter"],
+			"teleporter" : ["empty2", "empty3"],
+			"empty2" : ["teleporter", "medbay"],
+			"empty3" : ["teleporter", "cloaking"],
+			"medbay" : ["empty2", "sensors", "shields", "empty4"],
+			"cloaking" : ["empty3", "doors", "shields", "empty4"],
+			"sensors" : ["medbay"],
+			"doors" : ["cloaking"],
+			"shields" : ["empty4", "medbay", "cloaking", "drone_control"],
+			"empty4" : ["medbay", "shields", "cloaking"],
+			"drone_control" : ["shields", "drone_control"],
+			"engines" : ["drone_control"]
+		},
+		"room_size" : {
+			"pilot" : 2,
+			"o2" : 2,
+			"empty1" : 2,
+			"weapons" : 4,
+			"teleporter" : 2,
+			"empty2" : 2,
+			"empty3" : 2,
+			"medbay" : 4,
+			"cloaking" : 4,
+			"sensors" : 2,
+			"doors" : 2,
+			"shields" : 4,
+			"empty4" : 2,
+			"drone_control" : 2,
+			"engines" : 4
+		}
+	}
+}

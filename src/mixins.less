@@ -1,0 +1,108 @@
+
+.bevel(@color, @size : 10px){
+	background: @color;
+	background:
+		-moz-linear-gradient(45deg,  transparent @size, @color @size),
+		-moz-linear-gradient(135deg, transparent @size, @color @size),
+		-moz-linear-gradient(225deg, transparent @size, @color @size),
+		-moz-linear-gradient(315deg, transparent @size, @color @size);
+	background:
+		-o-linear-gradient(45deg,  transparent @size, @color @size),
+		-o-linear-gradient(135deg, transparent @size, @color @size),
+		-o-linear-gradient(225deg, transparent @size, @color @size),
+		-o-linear-gradient(315deg, transparent @size, @color @size);
+	background:
+		-webkit-linear-gradient(45deg,  transparent @size, @color @size),
+		-webkit-linear-gradient(135deg, transparent @size, @color @size),
+		-webkit-linear-gradient(225deg, transparent @size, @color @size),
+		-webkit-linear-gradient(315deg, transparent @size, @color @size);
+
+	background-position: bottom left, bottom right, top right, top left;
+	-moz-background-size: 52% 52%;
+	-webkit-background-size: 52% 52%;
+	background-size: 52% 52%;
+	background-repeat: no-repeat;
+
+}
+
+
+.menu2 {
+	.bevel(@white);
+	padding:  7px;
+	position : relative;
+
+	.title {
+		position: absolute;
+		font-family: Bitmap;
+		background-color: @white;
+		text-transform: uppercase;
+		font-size: 0.7em;
+		padding-left: 20px;
+		padding-right: 10px;
+		padding-bottom: 5px;
+		.outline(2);
+		&>div{
+			margin-top: -10px;
+		}
+
+		&:after{
+			content: "";
+			z-index: 50;
+			position: absolute;
+			display: block;
+			left: 100%;
+			top: 0;
+			box-sizing: border-box;
+			border-color: transparent;
+			border-style: solid;
+			border-width: 27px;
+			border-bottom-width: 0;
+			border-top-color: @white;
+			border-left-width: 0;
+		}
+	}
+
+	.content{
+		.bevel(@dark);
+		padding : 8px;
+		padding-top: 32px;
+	}
+
+
+}
+
+.ftlButton2{
+	.bevel(black, 3px);
+
+	display        : inline-block;
+	vertical-align : top;
+
+	padding        : 2px;
+
+	text-align     : center;
+
+	&>div{
+		.bevel(@white,3px);
+
+		padding : 5px;
+		cursor    : pointer;
+		font-size : 0.6em;
+
+		&:hover{
+			.bevel(@yellow,3px);
+		}
+	}
+
+}
+
+.outline(@dist){
+	.outline(@dist, @dist, "@{dist}px 0px black, 0px @{dist}px black");
+}
+.outline(@dist, @static, @shadow) when (@dist > 0) and (isstring(@shadow)) {
+	@shadow-loop: "@{shadow}, @{dist}px @{static}px black, -@{dist}px @{static}px black, @{dist}px -@{static}px black, -@{dist}px -@{static}px black, @{static}px @{dist}px black, @{static}px -@{dist}px black, -@{static}px @{dist}px black, -@{static}px -@{dist}px black";
+	.outline(@dist - 1, @static, @shadow-loop);
+}
+.outline(@dist, @static, @shadow) when (@dist = 0){
+	text-shadow: ~"@{shadow}";
+	color : @white;
+}

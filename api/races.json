@@ -1,0 +1,83 @@
+{
+	"human" : {
+		"id"     : "human",
+		"name"   : "Human",
+		"cost"   : 40,
+		"health" : 100,
+		"notes"  : [
+			"They learn skills faster"
+		]
+	},
+	"engi" : {
+		"id"     : "engi",
+		"name"   : "Engi",
+		"cost"   : 50,
+		"health" : 100,
+		"notes"  : [
+			"2.0x Repair speed",
+			"0.5x Combat damage"
+		]
+	},
+	"mantis" : {
+		"id"     : "mantis",
+		"name"   : "Mantis",
+		"cost"   : 45,
+		"health" : 100,
+		"notes"  : [
+			"2.0x Combat damage",
+			"1.2x move speed",
+			"0.5x Repair speed"
+		]
+	},
+	"rockmen" : {
+		"id"     : "rockmen",
+		"name"   : "Rockmen",
+		"cost"   : 65,
+		"health" : 150,
+		"notes"  : [
+			"Immune to fire",
+			"0.5x Movement speed"
+		]
+	},
+	"zoltan" : {
+		"id"     : "zoltan",
+		"name"   : "Zoltan",
+		"cost"   : 65,
+		"health" : 70,
+		"notes"  : [
+			"Provides one power bar to occupied system",
+			"Explodes when killed, causing damage to nearby systems and crew"
+		]
+	},
+	"slug" : {
+		"id"     : "slug",
+		"name"   : "Slug",
+		"cost"   : 45,
+		"health" : 100,
+		"notes"  : [
+			"Telepathic powers reveal rooms and lifeforms even when sensors are down",
+			"Immune to mind control"
+		]
+	},
+	"crystal" : {
+		"id"     : "crystal",
+		"name"   : "Crystal",
+		"cost"   : 65,
+		"health" : 125,
+		"notes"  : [
+			"Lockdown Power (Blocks movement to and from a room)",
+			"Reduced suffocation damage",
+			"0.8x Movement speed"
+		]
+	},
+	"lanius" : {
+		"id"     : "lanius",
+		"name"   : "Lanius",
+		"cost"   : 50,
+		"health" : 100,
+		"notes"  : [
+			"Drains oxygen from any room they are in",
+			"0.8x Movement speed"
+		]
+	}
+}

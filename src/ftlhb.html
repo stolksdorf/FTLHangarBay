@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js" ></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.5.2/underscore-min.js" ></script>
+	<link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
+
+
+	<link rel="stylesheet" type="text/css" href="/ftlhb.css" />
+	<script src="/ftlhb.js" ></script>
+
+
+
+
+	<!-- Config
+
+
+<script src="/lib/archetype.js" ></script>
+<script src="/lib/xo.js" ></script>
+
+	<script src="/config.js" ></script>
+	<script src="/generator.js" ></script>
+
+	<!-- Views -
+	<script src="/views/crewSelector.js" ></script>
+	<script src="/views/crewMember.js" ></script>
+	<script src="/views/shipCrew.js" ></script>
+	<script src="/views/shipName.js" ></script>
+	<script src="/views/shipSelector.js" ></script>
+
+
+	<script src="/ftl_hb.js" ></script>
+-->
+</head>
+
+<body xo-view='app'>
+	<title>FTL: Hangar Bay</title>
+
+<div class='container'>
+
+
+<div class='shipNameContainer' xo-view='shipName'>
+	<div class='shipName'>
+		<input type='text' xo-element='name' maxlength="16"></input>
+	</div>
+
+	<div class='shipGenerators'>
+		<div class='shipGeneratorOption selected' xo-data='jaeger'>Jaeger</div>
+		<div class='shipGeneratorOption' xo-data='starfleet'>Starfleet</div>
+		<div class='shipGeneratorOption selected' xo-data='pirate'>Pirate</div>
+		<div class='shipGeneratorOption' xo-data='silly'>Silly</div>
+	</div>
+
+	<div class='shipRename ftlButton2' xo-element='genButton'><div>
+		<i class='icon-retweet'></i>
+	</div></div>
+
+</div>
+
+
+<img class='ship__image' xo-element='shipImage' ></img>
+
+
+
+<div class='shipSelector menu2' xo-view="shipSelector">
+		<div class='title'><div>ships</div></div>
+		<div class='shipSelect__container content'>
+			<div xo-element='container'></div>
+			<div class='shipTypeOptionContainer'>
+				<div class='shipTypeOption selected' xo-element='typeA'>A</div>
+				<div class='shipTypeOption' xo-element='typeB'>B</div>
+				<div class='shipTypeOption' xo-element='typeC'>C</div>
+			</div>
+		</div>
+</div>
+
+<div class='shipCrew menu' xo-view='shipCrew'>
+
+	<div class='title'><div>crew <i class='icon-retweet' xo-element='renameAll'></i></div></div>
+	<div class='crewContainer content' xo-element='container'></div>
+</div>
+
+<template xo-schematic='crewMember'>
+	<div class='crewCard'>
+		<div class='crew__image' xo-element='iconButton'><img xo-element='image'/></div>
+		<div class='crew__name'><div xo-element='name'></div></div>
+		<div class='crew__newName ftlButton' xo-element='rename'><div>
+			<i class='icon-retweet'></i>
+		</div></div>
+		<div class='crew__remove ftlButton' xo-element='remove'><div>
+			<i class='icon-remove'></i>
+		</div></div>
+	</div>
+</template>
+
+
+
+
+<div class='addCrew menu2' xo-view='crewSelector'>
+	<div class='title'><div>add crew</div></div>
+	<div class='addCrewContainer content' xo-element='container'>
+	</div>
+</div>
+
+
+
+
+
+
+
+</div>
+</body>
+<script>
+	$(document).ready(function(){
+		ftl_hb.start();
+	});
+</script>
+
+</html>

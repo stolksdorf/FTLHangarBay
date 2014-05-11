@@ -1,0 +1,86 @@
+
+@import "mixins.less";
+
+@import "shipSelector/shipSelector.less";
+@import "crewMember/crewMember.less";
+@import "crewSelector/crewSelector.less";
+//@import "shipCrew/shipCrew.less";
+@import "shipName/shipName.less";
+
+
+
+@white  : #ecf4e7;
+@gray   : #7c6464;
+@yellow : #f6eea3;
+@dark   : #292421;
+
+@font-face{
+	font-family : Bitmap;
+	src         : url('/font/Bitmap-Regular.ttf');
+}
+
+@font-face{
+	font-family : ccnew;
+	src         : url('/font/c&cnew.ttf');
+}
+@font-face{
+	font-family : jType;
+	src         : url('/font/JustinFont12.ttf');
+}
+
+
+
+
+html, body, div, span, applet, object, iframe,h1, h2, h3, h4, h5, h6, p, blockquote, pre,a, abbr, acronym, address, big, cite, code,del, dfn, em, img, ins, kbd, q, s, samp,small, strike, strong, sub, sup, tt, var,b, u, i, center,dl, dt, dd, ol, ul, li,fieldset, form, label, legend,table, caption, tbody, tfoot, thead, tr, th, td,article, aside, canvas, details, embed,figure, figcaption, footer, header, hgroup,menu, nav, output, ruby, section, summary,time, mark, audio, video {
+	vertical-align : baseline;
+
+	margin         : 0;
+	padding        : 0;
+
+	font           : inherit;
+	font-size      : 100%;
+	border         : 0;
+}
+
+body{
+	background-color : black; //make into stars
+	font-family      : ccnew;
+	font-size        : 2em;
+
+	min-height: 100%;
+
+	.container{
+		position         : relative;
+
+		height           : 800px;
+		max-width        : 1200px;
+		margin-right     : auto;
+		margin-left      : auto;
+
+		background-image : url('/img/FTL bg dark2.png');
+		background-repeat:repeat-y;
+	}
+}
+input{
+	color: @white;
+	background-color: black;
+	font-family: ccnew;
+	-webkit-appearance: none;
+	outline: none;
+	border: none;
+	width: 100%;
+}
+
+
+
+
+
+
+.ship__image{
+	position          : absolute;
+	left              : 50%;
+	top : 140px;
+	-webkit-transform : translateX(-50%);
+	-ms-transform     : translateX(-50%);
+	transform         : translateX(-50%);
+}

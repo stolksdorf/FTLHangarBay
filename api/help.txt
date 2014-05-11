@@ -1,0 +1,29 @@
+FTL API v0.1.0
+--------------
+
+Available Endpoints:
+/api/augments
+/api/drones
+/api/layouts
+/api/races
+/api/ships
+/api/subsystems
+/api/systems
+/api/weapons
+
+Example:
+GET /api/weapons/hull_laser2
+
+{
+    "id": "hull_laser1",
+    "name": "Hull Laser I",
+    "type": "laser",
+    "damage": 1,
+    "power": 2,
+    "cooldown": 14,
+    "breach_chance": 0.2,
+    "shots": 2,
+    "hull_bust": true,
+    "cost": 65,
+    "rarity": 2
+},

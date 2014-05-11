@@ -1,0 +1,176 @@
+{
+	"boarding_drone" : {
+		"id" : "boarding_drone",
+		"name" : "Boarding Drone",
+		"type" : "boarding",
+		"cost" : 70,
+		"power" : 3,
+		"rarity" : 5,
+		"health" : 150,
+		"notes" : [
+			"Passes through any level of regular shields",
+			"Boards enemy ships attacks enemy crewmen",
+			"Breeches room it enters in"
+		]
+	},
+	"ion_intruder" : {
+		"id" : "ion_intruder",
+		"name" : "ion Intruder",
+		"type" : "boarding",
+		"cost" : 65,
+		"power" : 3,
+		"rarity" : 999,
+		"health" : 125,
+		"notes" : [
+			"Passes through any level of regular shields",
+			"Periodically ionizes systems and stuns crew",
+			"Breeches room it enters in"
+		]
+	},
+	"antipersonnel_drone" : {
+		"id" : "antipersonnel_drone",
+		"name" : "Anti-Personnel Drone",
+		"type" : "crew",
+		"cost" : 60,
+		"power" : 2,
+		"rarity" : 1,
+		"health" : 150,
+		"notes" : [
+			"Attacks hostile boarding crews",
+			"Moves slower than normal speed"
+		]
+	},
+	"system_repair_drone" : {
+		"id" : "system_repair_drone",
+		"name" : "System Repair Drone",
+		"type" : "crew",
+		"cost" : 30,
+		"power" : 1,
+		"rarity" : 1,
+		"notes" : [
+			"Repairs damaged systems",
+			"Moves slower than normal speed",
+			"Does not suffocate and is fireproof",
+			"Repairs systems in order in which they were damaged"
+		]
+	},
+	"combat_drone1" : {
+		"id" : "combat_drone1",
+		"name" : "Combat Drone Mark I",
+		"type" : "combat",
+		"cost" : 50,
+		"power" : 2,
+		"rarity" : 2,
+		"speed" : 15,
+		"notes" : [
+			"Continually attacks the enemy ship with a single laser",
+			"Slower then normal shield recharging"
+		]
+	},
+	"combat_drone2" : {
+		"id" : "combat_drone2",
+		"name" : "Combat Drone Mark II",
+		"type" : "combat",
+		"cost" : 100,
+		"power" : 4,
+		"rarity" : 5,
+		"speed" : 28,
+		"notes" : [
+			"Continually attacks the enemy ship with a single laser",
+			"Able to evade the Anit-Combat Drone"
+		]
+	},
+	"beam_drone1" : {
+		"id" : "beam_drone1",
+		"name" : "Anti-Ship Beam Drone I",
+		"type" : "combat",
+		"cost" : 50,
+		"power" : 2,
+		"rarity" : 3,
+		"range" : 20,
+		"notes" : [
+			"Continually attacks the enemy ship with a small beam",
+			"Slower then normal shield recharging"
+		]
+	},
+	"beam_drone2" : {
+		"id" : "beam_drone2",
+		"name" : "Anti-Ship Beam Drone II",
+		"type" : "combat",
+		"power" : 3,
+		"rarity" : 1,
+		"notes" : [
+			"Continually attacks the enemy ship with a small beam",
+			"Able to evade the Anit-Combat Drone"
+		]
+	},
+	"fire_drone" : {
+		"id" : "fire_drone",
+		"name" : "Anti-Ship Fire Drone",
+		"type" : "combat",
+		"power" : 3,
+		"rarity" : 1,
+		"cost" : 50,
+		"notes" : [
+			"Continually attacks the enemy ship with a fire beam"
+		]
+	},
+	"defense_drone1" : {
+		"id" : "defense_drone1",
+		"name" : "Defense Drone Mark I",
+		"type" : "defense",
+		"cost" : 50,
+		"power" : 2,
+		"rarity" : 1,
+		"cooldown" : 1,
+		"notes" : [
+			"Shoots down missiles, hacking and boarding drones, and asteroids"
+		]
+	},
+	"defense_drone2" : {
+		"id" : "defense_drone2",
+		"name" : "Defense Drone Mark II",
+		"type" : "defense",
+		"cost" : 75,
+		"power" : 3,
+		"rarity" : 3,
+		"cooldown" : 0.75,
+		"notes" : [
+			"Shoots down missiles, hacking and boarding drones, asteroids, ion blasts and lasers"
+		]
+	},
+	"hull_repair_drone" : {
+		"id" : "hull_repair_drone",
+		"name" : "Hull Repair Drone",
+		"type" : "defense",
+		"cost" : 100,
+		"power" : 2,
+		"rarity" : 4,
+		"notes" : [
+			"Repairs 3-5 hull"
+		]
+	},
+	"anticombat_drone" : {
+		"id" : "anticombat_drone",
+		"name" : "Anti-Combat Drone",
+		"type" : "defense",
+		"cost" : 35,
+		"power" : 999,
+		"rarity" : 1,
+		"notes" : [
+			"Stuns combat, hacking, and boarding drones"
+		]
+	},
+	"shield_drone" : {
+		"id" : "shield_drone",
+		"name" : "Shield Overcharger",
+		"type" : "defense",
+		"cost" : 60,
+		"power" : 3,
+		"rarity" : 999,
+		"cooldown" : 8,
+		"notes" : [
+			"Adds bars of super shields to your ship"
+		]
+	}
+}

@@ -1,0 +1,72 @@
+
+.shipCrew{
+	position : absolute;
+	top      : 470px;
+	right     : 30px;
+
+	width : 320px;
+
+	.title{
+		i{
+			cursor: pointer;
+			&:hover{
+				color : @yellow;
+			}
+		}
+	}
+
+	.content{
+		padding-top: 12px;
+	}
+
+	.crewContainer{
+		min-height : 195px;
+
+		.crewCard{
+			@cut       : 5px;
+
+			.whiteBorder(@cut, 3px);
+
+			height     : 25px;
+			margin-top : 15px;
+
+			&>*:not(:last-child){
+				margin-right : -7px;
+			}
+
+			.crew__image{
+				.bsgBorder(@gray, @cut);
+
+				display        : inline-block;
+				vertical-align : top;
+
+				height         : 25px;
+
+				cursor         : pointer;
+
+				img{
+					height : 100%;
+				}
+			}
+
+			.crew__name{
+				.bsgBorder(@dark, @cut);
+				font-family: jType;
+
+				display        : inline-block;
+				vertical-align : top;
+
+				width          : 182px;
+				padding-right  : 5px;
+				padding-left   : 5px;
+
+				font-size      : 0.4em;
+				color          : white;
+			}
+
+			.crew__remove, .crew__newName{
+				width          : 30px;
+			}
+		}
+	}
+}

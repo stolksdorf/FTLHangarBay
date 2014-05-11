@@ -1,0 +1,27 @@
+.addCrew{
+	position : absolute;
+	top      : 600px;
+	left     : 300px;
+
+	.addCrewContainer{
+		width         : 160px;
+		padding-right : 10px;
+		padding-left  : 10px;
+
+		.newCrewCard{
+			.bevel(@gray, 5px);
+			display        : inline-block;
+			vertical-align : top;
+			padding: 3px;
+			height: 28px;
+			margin : 3px;
+			cursor         : pointer;
+			img{
+				height : 100%;
+			}
+			&:hover{
+				.bevel(@yellow, 5px);
+			}
+		}
+	}
+}

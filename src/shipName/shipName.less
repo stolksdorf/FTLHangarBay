@@ -1,0 +1,75 @@
+.shipNameContainer{
+	.bevel(@white);
+
+	display : inline-block;
+	padding: 6px;
+
+	margin  : 30px;
+
+	.shipName{
+		.bevel(black);
+		display        : inline-block;
+		vertical-align : top;
+		padding-left   : 15px;
+		padding-right   : 15px;
+		width : 300px;
+		color          : @white;
+		input{
+			font-size      : 1.6em;
+		}
+	}
+
+	.shipGenerators{
+		display: inline-block;
+		vertical-align: top;
+		width : 208px;
+		/*.bsgBorder(@dark);
+		padding-left : 8px;
+		padding-right : 8px;
+		height : 44px;
+*/
+		.shipGeneratorOption{
+			display: inline-block;
+			vertical-align: top;
+			width : 80px;
+			font-family: jType;
+			text-align: center;
+			padding: 3px;
+			font-size: 0.4em;
+			border : 1px solid @dark;
+			cursor: pointer;
+
+			background-color: @dark;
+			color : @white;
+
+
+			&.selected{
+				background-color: @yellow;
+				color : black;
+			}
+			/*
+			.bsgBorder(@white, 3px);
+			padding-left: 5px;
+			padding-right: 5px;
+			margin-right: -5px;
+			font-size: 0.6em;
+			margin-bottom: 6px;
+
+			&>*:hover{
+				.bsgBorder(@yellow, 3px);
+			}
+			*/
+		}
+
+	}
+
+	.shipRename{
+		.outline(2);
+
+		text-transform : uppercase;
+		&:hover{
+			color : @yellow;
+		}
+	}
+
+}
