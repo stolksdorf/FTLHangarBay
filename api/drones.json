@@ -19,7 +19,7 @@
 		"type" : "boarding",
 		"cost" : 65,
 		"power" : 3,
-		"rarity" : 999,
+		"rarity" : "???",
 		"health" : 125,
 		"notes" : [
 			"Passes through any level of regular shields",
@@ -155,19 +155,31 @@
 		"name" : "Anti-Combat Drone",
 		"type" : "defense",
 		"cost" : 35,
-		"power" : 999,
+		"power" : "???",
 		"rarity" : 1,
 		"notes" : [
 			"Stuns combat, hacking, and boarding drones"
 		]
 	},
-	"shield_drone" : {
-		"id" : "shield_drone",
+	"shield_overcharger" : {
+		"id" : "shield_overcharger",
 		"name" : "Shield Overcharger",
 		"type" : "defense",
 		"cost" : 60,
 		"power" : 3,
-		"rarity" : 999,
+		"rarity" : "???",
+		"cooldown" : 8,
+		"notes" : [
+			"Adds bars of super shields to your ship"
+		]
+	},
+	"shield_overcharger_plus" : {
+		"id" : "shield_overcharger_plus",
+		"name" : "Shield Overcharger",
+		"type" : "defense",
+		"cost" : 60,
+		"power" : 1,
+		"rarity" : "???",
 		"cooldown" : 8,
 		"notes" : [
 			"Adds bars of super shields to your ship"

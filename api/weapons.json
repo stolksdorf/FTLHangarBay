@@ -21,16 +21,16 @@
 		"cost"     : 80,
 		"rarity" : "???"
 	},
-	"adv_flak" : {
-		"id"   : "adv_flak",
+	"adv_flak_gun" : {
+		"id"   : "adv_flak_gun",
 		"name" : "Adv. Flak Gun",
 		"type" : "flak",
 		"power"    : 1,
 		"cooldown" : 8,
 		"damage"   : 3,
 		"fire_chance" : 0.1,
-		"cost"     : "???",
-		"rarity" : "???"
+		"cost"     : 60,
+		"rarity" : 0
 	},
 	"basic_laser" : {
 		"id"   : "basic_laser",
@@ -90,8 +90,8 @@
 		"cost" : 110,
 		"rarity" : 4
 	},
-	"heavy_pierce1" : {
-		"id"   : "heavy_pierce1",
+	"heavy_pierce_laser1" : {
+		"id"   : "heavy_pierce_laser1",
 		"name" : "Heavy Pierce I",
 		"type" : "laser",
 		"damage" : 2,
@@ -155,8 +155,8 @@
 		"cost" : 100,
 		"rarity" : 3
 	},
-	"chain_burst" : {
-		"id"   : "chain_burst",
+	"chain_burst_laser" : {
+		"id"   : "chain_burst_laser",
 		"name" : "Chain Burst Laser",
 		"type" : "laser",
 		"damage" : 1,
@@ -507,6 +507,36 @@
 		"cost"   : 70,
 		"rarity" : 4
 	},
+	"lock_bomb" : {
+		"id"   : "lock_bomb",
+		"name" : "Lock Bomb",
+		"type" : "bomb",
+		"power"    : 1,
+		"cooldown" : 15,
+
+		"system_damage" : 0,
+		"crew_damage"   : 0,
+		"fire_chance"   : 0,
+		"breach_chance" : 0,
+
+		"cost"   : 60,
+		"rarity" : 3
+	},
+	"stun_bomb" : {
+		"id"   : "stun_bomb",
+		"name" : "Stun Bomb",
+		"type" : "bomb",
+		"power"    : 1,
+		"cooldown" : 17,
+
+		"system_damage" : 0,
+		"crew_damage"   : 0,
+		"fire_chance"   : 0,
+		"breach_chance" : 0,
+
+		"cost"   : 45,
+		"rarity" : 2
+	},
 	"healing_burst" : {
 		"id"   : "healing_burst",
 		"name" : "Healing Burst",
@@ -536,5 +566,49 @@
 
 		"cost"   : 40,
 		"rarity" : "???"
+	},
+	"crystal_burst1" : {
+		"id" : "crystal_burst1",
+		"name" : "Crystal Burst Mark I",
+		"power" : 2,
+		"cooldown" : 15,
+		"shots" : 2,
+		"damage" : 1,
+		"breach_chance" : 0.1,
+		"cost" : 20,
+		"rarity" : 1
+	},
+	"crystal_burst2" : {
+		"id" : "crystal_burst2",
+		"name" : "Crystal Burst Mark II",
+		"power" : 3,
+		"cooldown" : 17,
+		"shots" : 3,
+		"damage" : 1,
+		"breach_chance" : 0.1,
+		"cost" : 20,
+		"rarity" : 4
+	},
+	"heavy_crystal1" : {
+		"id" : "heavy_crystal1",
+		"name" : "Heavy Crystal Mark I",
+		"power" : 1,
+		"cooldown" : 13,
+		"shots" : 1,
+		"damage" : 2,
+		"breach_chance" : 0.1,
+		"cost" : 20,
+		"rarity" : 2
+	},
+	"heavy_crystal2" : {
+		"id" : "heavy_crystal2",
+		"name" : "Heavy Crystal Mark II",
+		"power" : 3,
+		"cooldown" : 19,
+		"shots" : 1,
+		"damage" : 4,
+		"breach_chance" : 1.0,
+		"cost" : 20,
+		"rarity" : 5
 	}
 }

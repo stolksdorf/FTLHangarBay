@@ -29,9 +29,9 @@
 			"0.5x Repair speed"
 		]
 	},
-	"rockmen" : {
-		"id"     : "rockmen",
-		"name"   : "Rockmen",
+	"rock" : {
+		"id"     : "rock",
+		"name"   : "Rock",
 		"cost"   : 65,
 		"health" : 150,
 		"notes"  : [
