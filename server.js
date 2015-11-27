@@ -3,6 +3,7 @@ var fs      = require('fs');
 var _       = require('underscore');
 var express = express = require("express");
 var app     = module.exports = express();
+var ejs = require('ejs');
 
 
 
@@ -27,7 +28,7 @@ app.get('/', function(req, res){
 
 var api = require('./api/api');
 app.get('/api', function(req, res){
-	res.setHeader("Content-Type", "application/javascript");
+	res.setHeader("Content-Type", "application/json");
 	res.send(api.help);
 });
 
@@ -48,8 +49,10 @@ app.get('/api/*', function(req, res){
 var stats = require('./stats')
 app.get('/shipcost', function(req, res){
 	res.json(stats.all_ship_cost(api));
-})
+});
 
+
+//cool suchkjhkjhkjhkjhjhkjhkjhkjhkjhkjhkjhkjhkjkjhkjh
 
 
 app.get('/stealth_d', function(req, res){
@@ -57,10 +60,39 @@ app.get('/stealth_d', function(req, res){
 		return result + ship_id + " " + ship_data.total + '\n';
 	},"")
 	res.send(test);
-})
-
-
-
-app.listen(port, function() {
-	console.log("Listening on " + port);
 });
+
+var server ={};
+server = {
+	instance : undefined,
+	start : function(){
+		server.instance = app.listen(port, function() {
+			console.log("Listening on " + port);
+		});
+		return server;
+	},
+	stop2 : function(callback){
+		if(server.instance){
+			//server.instance.kill( 'SIGTERM' );
+			console.log('closing');
+			return server.instance.close(function(){
+				callback && callback();
+				console.log('calalalalal');
+			});
+		}
+		callback && callback();
+		return server;
+	},
+	restart : function(){
+		var self = server;
+		server.stop2(function(){
+			self.start();
+		})
+		return server;
+	},
+};
+
+console.log('RELOADED');
+
+module.exports = server;
+

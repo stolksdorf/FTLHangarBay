@@ -7,14 +7,18 @@
     "ejs": "~1.0.0",
     "express": "~3.5.1",
     "underscore": "~1.6.0",
-    "grunt": "~0.4.4"
+    "grunt": "~0.4.4",
+    "brfs": "~1.1.1",
+    "reactify": "~0.13.1",
+    "vinyl-source-stream": "~0.1.1"
   },
   "devDependencies": {
     "grunt": "~0.4.4",
     "grunt-contrib-watch": "~0.6.1",
     "grunt-contrib-less": "~0.11.0",
     "gulp": "~3.6.2",
-    "gulp-browserify": "~0.5.0"
+    "gulp-browserify": "~0.5.0",
+    "react-tools": "~0.10.0"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
